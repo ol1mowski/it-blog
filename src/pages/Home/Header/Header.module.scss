@@ -6,7 +6,17 @@
     box-shadow: $box-shadow;
     @include d-flex;
     justify-content: space-between;
-    padding-left: 1rem;
+    padding-left: 7vw;
+
+    &__navMenu {
+        display: none;
+        &__items {
+            color: #dedede;
+            @include d-flex;
+            gap: 3rem;
+            list-style-type: none
+        }
+    }
 
     &__titleSection {
         @include d-flex;
@@ -15,7 +25,7 @@
 
     &__hamburgerSection {
         cursor: pointer;
-        margin-right: 1rem;
+        margin-right: 7vw;
     }
 
     &__h2 {
