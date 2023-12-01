@@ -5,4 +5,13 @@
     padding: 2rem 0;
     background-color: #fff;
     box-shadow: $box-shadow;
+    @include d-flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-left: 1rem;
+
+    &__h2 {
+        color: $text-blue-color;
+        font-weight: 700;
+    }
 }
