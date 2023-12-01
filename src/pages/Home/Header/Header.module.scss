@@ -1,17 +1,25 @@
 @import '../../../config/sass/index.scss';
 
 .header {
-    width: 100vw;
-    padding: 2rem 0;
+    padding: 1rem 0;
     background-color: #fff;
     box-shadow: $box-shadow;
     @include d-flex;
-    justify-content: flex-start;
-    gap: 1rem;
+    justify-content: space-between;
     padding-left: 1rem;
 
+    &__titleSection {
+        @include d-flex;
+        gap: 1rem;
+    }
+
+    &__hamburgerSection {
+        cursor: pointer;
+        margin-right: 1rem;
+    }
+
     &__h2 {
-        color: $text-blue-color;
         font-weight: 700;
+        color: #2d2e2d;
     }
 }
