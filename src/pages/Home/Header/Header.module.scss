@@ -1,7 +1,7 @@
 @import '../../../config/sass/index.scss';
 
 .header {
-    padding: 1rem 0;
+    padding: 1rem 2rem;
     background-color: #fff;
     box-shadow: $box-shadow;
     @include d-flex;
@@ -10,11 +10,28 @@
 
     &__navMenu {
         display: none;
+        @media screen and (min-width: $tablet) {
+            @include d-flex;
+            margin-right: 2rem;
+            gap: 1rem;
+        }
+        &__nav {
+            @include d-flex;
+        }
         &__items {
             color: #dedede;
             @include d-flex;
-            gap: 3rem;
-            list-style-type: none
+            list-style-type: none;
+            &__item {
+                transition: color .7s;
+                will-change: color;
+                margin-right: 2rem;
+            }
+            &__item:hover {
+                cursor: pointer;
+                color: #2d2e2d;
+
+            }
         }
     }
 
@@ -26,6 +43,9 @@
     &__hamburgerSection {
         cursor: pointer;
         margin-right: 7vw;
+        @media screen and (min-width: $tablet) {
+            display: none;
+        }
     }
 
     &__h2 {
