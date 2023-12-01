@@ -1,0 +1,40 @@
+@import "../../../config/sass/index.scss";
+
+.sliderContainer {
+  width: 100vw;
+  @include d-flex-column;
+  justify-content: flex-start;
+  margin-top: 5rem;
+  gap: 2rem;
+  &__image {
+    width: 80vw;
+    &__img {
+      width: 100%;
+      border-radius: 0.7rem;
+    }
+  }
+  &__content {
+    @include d-flex-column;
+    align-items: flex-start;
+    padding: 0 2rem;
+    gap: .7rem;
+    &__category {
+      color: #147efb;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+    &__title {
+      color: #2d2e32;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    &__text {
+        @include p;
+    }
+    &__read {
+        color: #147efb;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+  }
+}

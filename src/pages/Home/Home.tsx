@@ -1,10 +1,11 @@
 import Header from "./Header/Header"
+import Slider from "./Slider/Slider";
 
 const Home = () => {
     return (
         <>
             <Header />
-            <h1>Home</h1>
+            <Slider />
         </>
     )
 }
