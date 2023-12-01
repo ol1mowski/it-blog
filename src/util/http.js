@@ -5,7 +5,7 @@ import { QueryClient } from '@tanstack/react-query';
 export const queryClient = new QueryClient();
 
 
-async function fetchDataFromCollection(collectionName) {
+async function fetchDatatoSlider(collectionName) {
   const collectionRef = collection(db, collectionName);
   
   try {
@@ -19,6 +19,6 @@ async function fetchDataFromCollection(collectionName) {
 
 export function fetchPosts() {
 
-  const collectionName = 'events';  
-  return fetchDataFromCollection(collectionName);
+  const collectionName = 'posts';  
+  return fetchDatatoSlider(collectionName);
 }

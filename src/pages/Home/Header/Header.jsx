@@ -1,17 +1,7 @@
-import { useQuery } from '@tanstack/react-query';
+
 import s from './Header.module.scss';
-import { fetchPosts } from '../../../util/http';
-
-
 
 const Header = () => {
-
-  const { data } = useQuery({
-    queryKey: ['posts'],
-    queryFn: fetchPosts,
-  });
-
-  console.log(data);
 
   return (
     <header className={s.header}>
