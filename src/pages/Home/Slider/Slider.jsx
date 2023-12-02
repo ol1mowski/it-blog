@@ -1,6 +1,6 @@
 import s from "./Slider.module.scss";
 
-import { fetchPosts } from '../../../util/http';
+import { fetchPosts, getImageUrl } from '../../../util/http';
 import { useQuery } from '@tanstack/react-query';
 
 const Slider = () => {
@@ -11,17 +11,23 @@ const Slider = () => {
     queryFn: fetchPosts,
   });
 
+  const { data: imageData, status: imageStatus  } = useQuery({
+    queryKey: ['images'],
+    queryFn: getImageUrl,
+  })
+
+
   if (isError) {
     throw error.message
   }
 
-  if (status === 'success') {
+  if (status === 'success' && imageStatus === 'success') {
     const first = data[0]
     const {category, title, description} = first;
     return (
       <main className={s.sliderContainer}>
         <div className={s.sliderContainer__image}>
-          <img src='' alt="wd" className={s.sliderContainer__image__img} />
+          <img src={imageData} alt="wd" className={s.sliderContainer__image__img} />
         </div>
         <div className={s.sliderContainer__content}>
           <p className={s.sliderContainer__content__category}>{category}</p>
