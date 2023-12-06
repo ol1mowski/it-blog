@@ -1,36 +1,39 @@
+import { collection, getDocs } from "firebase/firestore";
 
-import { collection, getDocs} from 'firebase/firestore';
+import { db, storage } from "../config/firebase/firebaseConfig";
+import { QueryClient } from "@tanstack/react-query";
 
-import { db, storage } from '../config/firebase/firebaseConfig';
-import { QueryClient } from '@tanstack/react-query';
-
-import { ref, getDownloadURL } from 'firebase/storage';
-
+import { ref, getDownloadURL, listAll, getStorage } from "firebase/storage";
 
 export const queryClient = new QueryClient();
 
 export const getImageUrl = async () => {
   try {
-    // Specify the path to your image in the storage
-    const imageRef = ref(storage, 'images/it.png');
+    const storage = getStorage();
+    const imagesFolder = 'images'; // image folder path
+    const folderRef = ref(storage, imagesFolder);
 
-    // Get the image download URL
-    const url = await getDownloadURL(imageRef);
 
-    // Set the image URL in the state
-    return url;
+    const files = await listAll(folderRef);
+
+
+    const imageUrls = await Promise.all(files.items.map(async (fileRef) => {
+      return await getDownloadURL(fileRef);
+    }));
+
+    return imageUrls;
   } catch (error) {
-    console.error('Error fetching image:', error);
-    throw error; // Re-throw the error to be caught by the calling code
+    console.error('Error fetching images:', error);
+    throw error;
   }
 };
 
 async function fetchDatatoSlider(collectionName) {
   const collectionRef = collection(db, collectionName);
-  
+
   try {
     const snapshot = await getDocs(collectionRef);
-    const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    const data = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
     return data;
   } catch (error) {
     throw error;
@@ -38,7 +41,6 @@ async function fetchDatatoSlider(collectionName) {
 }
 
 export function fetchPosts() {
-
-  const collectionName = 'posts';  
+  const collectionName = "posts";
   return fetchDatatoSlider(collectionName);
 }

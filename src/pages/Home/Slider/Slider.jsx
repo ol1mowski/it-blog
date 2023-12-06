@@ -1,50 +1,60 @@
-import s from "./Slider.module.scss";
+  import s from "./Slider.module.scss";
 
-import { fetchPosts, getImageUrl } from '../../../util/http';
-import { useQuery } from '@tanstack/react-query';
+  import loadingIcon from '../../../assets/loading_icon.gif';
 
-const Slider = () => {
+  import { fetchPosts, getImageUrl } from '../../../util/http';
+  import { useQuery } from '@tanstack/react-query';
 
-
-  const { data, status, isError, error } = useQuery({
-    queryKey: ['posts'],
-    queryFn: fetchPosts,
-  });
-
-  const { data: imageData, status: imageStatus  } = useQuery({
-    queryKey: ['images'],
-    queryFn: getImageUrl,
-  })
+  const Slider = () => {
 
 
-  if (isError) {
-    throw error.message
-  }
+    const { data, status, isError, error } = useQuery({
+      queryKey: ['posts'],
+      queryFn: fetchPosts,
+    });
 
-  if (status === 'success' && imageStatus === 'success') {
-    const first = data[0]
-    const {category, title, description} = first;
+    const { data: imageData, status: imageStatus  } = useQuery({
+      queryKey: ['images'],
+      queryFn: getImageUrl,
+    })
+
+
+
+    if (isError) {
+      console.error('Error fetching posts:', error);
+      throw error.message;
+    }
+    
+
+    if (status === 'success' && imageStatus === 'success' && imageData && data) {
+      const first = data[0];
+
+      const firstImage = imageData[1];
+
+      const {category, title, description} = first;
+      return (
+        <main className={s.sliderContainer}>
+          <div className={s.sliderContainer__image}>
+            <img src={firstImage} alt="wd" className={s.sliderContainer__image__img} />
+          </div>
+          <div className={s.sliderContainer__content}>
+            <p className={s.sliderContainer__content__category}>{category}</p>
+            <h2 className={s.sliderContainer__content__title}>{title}</h2>
+            <h3 className={s.sliderContainer__content__text}>
+              {description}
+            </h3>
+            <p className={s.sliderContainer__content__read}>Read more</p>
+          </div>
+        </main>
+      )
+    }
+
+
     return (
       <main className={s.sliderContainer}>
-        <div className={s.sliderContainer__image}>
-          <img src={imageData} alt="wd" className={s.sliderContainer__image__img} />
-        </div>
-        <div className={s.sliderContainer__content}>
-          <p className={s.sliderContainer__content__category}>{category}</p>
-          <h2 className={s.sliderContainer__content__title}>{title}</h2>
-          <h3 className={s.sliderContainer__content__text}>
-            {description}
-          </h3>
-          <p className={s.sliderContainer__content__read}>Read more</p>
-        </div>
+        <img src={loadingIcon} alt="loading Icon" />
       </main>
-    )
-  }
+    );
+  };
 
-
-  return (
-   <h1>loading</h1>
-  );
-};
-
-export default Slider;
+  export default Slider;
