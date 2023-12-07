@@ -2,13 +2,27 @@
 
 .sliderContainer {
   width: 90vw;
-  margin: 0 auto;
+  margin: 2rem auto;
   @include d-flex-column;
   justify-content: flex-start;
   margin-top: 5rem;
   gap: 2rem;
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  @media screen and (min-width: $big-tablets) {
+    width: 50rem;
+    gap: 3rem;   
+  }
   &__image {
     width: 80vw;
+    @media screen and (min-width: $mobile) {
+      width: 65vw;
+    }
+    @media screen and (min-width: $tablet) {
+      width: 150rem;
+    }
     &__img {
       width: 100%;
       border-radius: 0.7rem;
@@ -17,16 +31,22 @@
   &__content {
     @include d-flex-column;
     align-items: flex-start;
-    padding: 0 2rem;
+    padding: 0 7vw;
     gap: .7rem;
+    @media screen and (min-width: $tablet) {
+      padding: 0 2rem;
+    }
     &__category {
       color: #147efb;
       font-size: 1rem;
       font-weight: bold;
+      @media screen and (min-width: $mobile) {
+        font-size: 1.2rem;
+      }
     }
     &__title {
       color: #2d2e32;
-      font-size: 1.5rem;
+      font-size: 2rem;
       font-weight: bold;
     }
     &__text {
@@ -36,6 +56,22 @@
         color: #147efb;
         font-size: 1rem;
         font-weight: bold;
+    }
+  }
+  &__sliderDots {
+    @include d-flex;
+    gap: 1rem;
+    margin-bottom: 5rem;
+    &__dot {
+      border-radius: 100%;
+      width: .5rem;
+      height: .5rem;
+      border: 1px solid #147efb;
+      transition: backgroundColor .7s;
+      will-change: backgroundColor;
+    }
+    &__dot__active {
+      background-color: #147efb;
     }
   }
 }
