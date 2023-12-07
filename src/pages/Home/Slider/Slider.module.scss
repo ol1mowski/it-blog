@@ -1,5 +1,14 @@
 @import "../../../config/sass/index.scss";
 
+.sliderContainerLoading {
+  width: 90vw;
+  margin: 2rem auto;
+  @include d-flex-column;
+  justify-content: flex-start;
+  margin-top: 5rem;
+  gap: 2rem;
+}
+
 .sliderContainer {
   width: 90vw;
   margin: 2rem auto;
@@ -7,71 +16,117 @@
   justify-content: flex-start;
   margin-top: 5rem;
   gap: 2rem;
+
   @media screen and (min-width: $tablet) {
     flex-direction: row;
     justify-content: flex-start;
   }
+
   @media screen and (min-width: $big-tablets) {
     width: 50rem;
-    gap: 3rem;   
+    gap: 7vw;
   }
+
+  @media screen and (min-width: $desktop) {
+    width: 60rem;
+    gap: 5vw;
+    margin-top: 10rem;
+  }
+
   &__image {
     width: 80vw;
+
     @media screen and (min-width: $mobile) {
       width: 65vw;
     }
+
     @media screen and (min-width: $tablet) {
       width: 150rem;
     }
+
+
     &__img {
+      animation: slideAnimation .5s linear forwards;
       width: 100%;
       border-radius: 0.7rem;
     }
   }
+
   &__content {
     @include d-flex-column;
     align-items: flex-start;
     padding: 0 7vw;
-    gap: .7rem;
+    gap: .5rem;
+
     @media screen and (min-width: $tablet) {
-      padding: 0 2rem;
+      padding-left: 2rem;
+      padding-right: 0;
     }
+
+    @media screen and (min-width: $desktop) {
+      padding: 0;
+      gap: .7rem;
+    }
+
     &__category {
       color: #147efb;
       font-size: 1rem;
       font-weight: bold;
-      @media screen and (min-width: $mobile) {
-        font-size: 1.2rem;
-      }
     }
+
     &__title {
       color: #2d2e32;
       font-size: 2rem;
       font-weight: bold;
     }
+
     &__text {
-        @include p;
+      @include p;
     }
+
     &__read {
-        color: #147efb;
-        font-size: 1rem;
-        font-weight: bold;
+      color: #147efb;
+      font-size: 1rem;
+      font-weight: bold;
+
+      @media screen and (min-width: $desktop) {
+        margin-top: 1rem;
+      }
     }
   }
+
   &__sliderDots {
     @include d-flex;
     gap: 1rem;
-    margin-bottom: 5rem;
+    margin: 2rem 0;
+
+    @media screen and (min-width: $desktop) {
+      margin-top: 4rem;
+      margin-left: 6rem;
+    }
+
     &__dot {
+      cursor: pointer;
       border-radius: 100%;
       width: .5rem;
       height: .5rem;
       border: 1px solid #147efb;
-      transition: backgroundColor .7s;
+      transition: all 1s;
       will-change: backgroundColor;
     }
+
     &__dot__active {
       background-color: #147efb;
     }
+  }
+}
+
+@keyframes slideAnimation {
+  0% {
+    transform: translateY(-5vh);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }

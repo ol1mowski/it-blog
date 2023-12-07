@@ -30,18 +30,16 @@ const Slider = () => {
   if (status === 'success' && imageStatus === 'success' && imageData && data) {
     const contentData = data;
 
-    const images = [imageData[0], imageData[1]];
 
-    const { category, title, description } = contentData[0];
     return (
-      <SliderComponent category={category} title={title} description={description} images={images} />
+      <SliderComponent data={contentData} images={imageData} />
     )
   }
 
 
   return (
-    <main className={s.sliderContainer}>
-      <img src={loadingIcon} alt="loading Icon" />
+    <main className={s.sliderContainerLoading}>
+      <img src={loadingIcon} alt="loading Icon"/>
     </main>
   );
 };
