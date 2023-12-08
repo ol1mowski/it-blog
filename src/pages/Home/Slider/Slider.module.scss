@@ -16,6 +16,7 @@
   justify-content: flex-start;
   margin-top: 5rem;
   gap: 2rem;
+  animation: slideAnimation 1s linear forwards;
 
   @media screen and (min-width: $tablet) {
     flex-direction: row;
@@ -46,7 +47,7 @@
 
 
     &__img {
-      animation: slideAnimation .5s linear forwards;
+      animation: slideAnimation 1s linear forwards;
       width: 100%;
       border-radius: 0.7rem;
     }
@@ -123,10 +124,12 @@
 
 @keyframes slideAnimation {
   0% {
-    transform: translateY(-5vh);
+    transform: translateX(-3vh);
+    opacity: .2;
   }
 
   100% {
-    transform: translateY(0);
+    transform: translateX(0);
+    opacity: 1;
   }
 }

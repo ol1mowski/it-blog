@@ -5,8 +5,9 @@ import loadingIcon from '../../../assets/loading_icon.gif';
 import { fetchPosts, getImageUrl } from '../../../util/http';
 import { useQuery } from '@tanstack/react-query';
 import SliderComponent from "./SliderComponent/SliderComponent";
+import { memo } from 'react';
 
-const Slider = () => {
+const Slider = memo(() => {
 
 
   const { data, status, isError, error } = useQuery({
@@ -17,6 +18,8 @@ const Slider = () => {
   const { data: imageData, status: imageStatus } = useQuery({
     queryKey: ['images'],
     queryFn: getImageUrl,
+    gcTime: 100000,
+    staleTime: 100000,
   })
 
 
@@ -42,6 +45,6 @@ const Slider = () => {
       <img src={loadingIcon} alt="loading Icon"/>
     </main>
   );
-};
+})
 
 export default Slider;

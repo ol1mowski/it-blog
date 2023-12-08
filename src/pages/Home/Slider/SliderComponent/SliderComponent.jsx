@@ -13,7 +13,6 @@ const SliderComponent = memo(({ images, data }) => {
     const [title, setTitle] = useState(data[0].title);
     const [description, setDescription] = useState(data[0].description);
 
-    const [image, setImage] = useState(images[0]);
 
     const [index, setIndex] = useState(0);
 
@@ -50,8 +49,6 @@ const SliderComponent = memo(({ images, data }) => {
 
 
     useEffect(() => {
-        console.log(index);
-
         setCategory(data[index].category);
         setDescription(data[index].description);
         setTitle(data[index].title);
@@ -70,9 +67,9 @@ const SliderComponent = memo(({ images, data }) => {
         <>
             <main className={s.sliderContainer}>
                 <div className={s.sliderContainer__image}>
-                    { index === 0 ?  <img src={images[index]} alt="post image" className={s.sliderContainer__image__img} /> : null}
-                    { index === 1 ?  <img src={images[index]} alt="post image" className={s.sliderContainer__image__img} /> : null}
-                    { index === 2 ?  <img src={images[index]} alt="post image" className={s.sliderContainer__image__img} /> : null}
+                    { index === 0 ?  <img src={images[index]} loading="lazy" alt="post image" className={s.sliderContainer__image__img} /> : null}
+                    { index === 1 ?  <img src={images[index]} loading="lazy" alt="post image" className={s.sliderContainer__image__img} /> : null}
+                    { index === 2 ?  <img src={images[index]} loading="lazy" alt="post image" className={s.sliderContainer__image__img} /> : null}
                     
                 </div>
                 <div className={s.sliderContainer__content}>
