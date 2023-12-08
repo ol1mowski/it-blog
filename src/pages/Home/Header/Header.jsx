@@ -15,8 +15,7 @@ const Header = () => {
 
     const showMenuHandler = () => {
       hamburgerMenu.current.style.display='block';
-      showHamburgerMenu.current.style.display='none';
-      navigationSection.current.style.display='none';
+      // showHamburgerMenu.current.style.display='none';
     }
 
     showHamburgerMenu.current.addEventListener('click', showMenuHandler);
@@ -31,8 +30,6 @@ const Header = () => {
 
     const hideMenuHandler = () => {
       hamburgerMenu.current.style.display='none';
-      showHamburgerMenu.current.style.display='block';
-      navigationSection.current.style.display='flex';
     }
 
     closeHamburgerMenu.current.addEventListener('click', hideMenuHandler);
@@ -69,7 +66,6 @@ const Header = () => {
 
 
 
-    </header>
           <menu ref={hamburgerMenu} className={s.header__hamburgerMenu}>
 
           <section ref={closeHamburgerMenu} className={s.header__hamburgerMenu__close}>
@@ -77,6 +73,7 @@ const Header = () => {
           </section>
     
           </menu>
+    </header>
     </>
   );
 };

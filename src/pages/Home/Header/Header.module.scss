@@ -12,11 +12,15 @@
     top: 0;
 
     &__hamburgerMenu {
-        width: 80%;
         height: 100vh;
+        background-color: #fff;
+        width: 100vw;
         display: none;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
         transform: translateX(-100vw);
-
         padding: 2rem;
         animation: showMenu 1s linear forwards;
         &__close {
