@@ -67,9 +67,9 @@ const SliderComponent = memo(({ images, data }) => {
         <>
             <main className={s.sliderContainer}>
                 <div className={s.sliderContainer__image}>
-                    { index === 0 ?  <img src={images[index]} loading="lazy" alt="post image" className={s.sliderContainer__image__img} /> : null}
-                    { index === 1 ?  <img src={images[index]} loading="lazy" alt="post image" className={s.sliderContainer__image__img} /> : null}
-                    { index === 2 ?  <img src={images[index]} loading="lazy" alt="post image" className={s.sliderContainer__image__img} /> : null}
+                    { index === 0 ?  <img src={images[index]} draggable='false' loading="lazy" alt="post image" className={s.sliderContainer__image__img} /> : null}
+                    { index === 1 ?  <img src={images[index]} draggable='false' loading="lazy" alt="post image" className={s.sliderContainer__image__img} /> : null}
+                    { index === 2 ?  <img src={images[index]} draggable='false' loading="lazy" alt="post image" className={s.sliderContainer__image__img} /> : null}
                     
                 </div>
                 <div className={s.sliderContainer__content}>
