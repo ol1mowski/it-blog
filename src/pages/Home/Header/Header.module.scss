@@ -7,11 +7,22 @@
     @include d-flex;
     justify-content: space-between;
     padding-left: 7vw;
+    position: sticky;
+    z-index: 100;
+    top: 0;
 
     &__hamburgerMenu {
-        width: 100vw;
+        width: 80%;
         height: 100vh;
         display: none;
+        transform: translateX(-100vw);
+
+        padding: 2rem;
+        animation: showMenu 1s linear forwards;
+        &__close {
+            @include d-flex;
+            justify-content: flex-end;
+        }
     }
 
     &__navMenu {
@@ -57,5 +68,15 @@
     &__h2 {
         font-weight: 700;
         color: #2d2e2d;
+    }
+}
+
+
+@keyframes showMenu {
+    0% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        transform: translateX(0);
     }
 }

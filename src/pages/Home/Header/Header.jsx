@@ -15,6 +15,8 @@ const Header = () => {
 
     const showMenuHandler = () => {
       hamburgerMenu.current.style.display='block';
+      showHamburgerMenu.current.style.display='none';
+      navigationSection.current.style.display='none';
     }
 
     showHamburgerMenu.current.addEventListener('click', showMenuHandler);
@@ -29,6 +31,8 @@ const Header = () => {
 
     const hideMenuHandler = () => {
       hamburgerMenu.current.style.display='none';
+      showHamburgerMenu.current.style.display='block';
+      navigationSection.current.style.display='flex';
     }
 
     closeHamburgerMenu.current.addEventListener('click', hideMenuHandler);
@@ -41,8 +45,10 @@ const Header = () => {
 
 
   return (
-    <header className={s.header}>
-      <section ref={navigationSection} className={s.header__titleSection}>
+    <>
+    
+    <header ref={navigationSection} className={s.header}>
+      <section className={s.header__titleSection}>
         <img width="45" height="45" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/programming-flag.png" alt="programming-flag" />
         <h2 className={s.header__h2}>
           IT-Blog
@@ -62,21 +68,16 @@ const Header = () => {
       </section>
 
 
-      <menu ref={hamburgerMenu} className={s.header__hamburgerMenu}>
-      <section className={s.header__titleSection}>
-        <img width="45" height="45" src="https://img.icons8.com/nolan/64/1A6DFF/C822FF/programming-flag.png" alt="programming-flag" />
-        <h2 className={s.header__h2}>
-          IT-Blog
-        </h2>
-      </section>
 
-      <section ref={closeHamburgerMenu} className={s.header__hamburgerSection}>
-      <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/>
-      </section>
-
-      
-      </menu>
     </header>
+          <menu ref={hamburgerMenu} className={s.header__hamburgerMenu}>
+
+          <section ref={closeHamburgerMenu} className={s.header__hamburgerMenu__close}>
+          <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/delete-sign.png" alt="delete-sign"/>
+          </section>
+    
+          </menu>
+    </>
   );
 };
 
