@@ -1,96 +1,123 @@
-@import '../../../config/sass/index.scss';
+@import "../../../config/sass/index.scss";
 
 .header {
-    padding: 1rem 2rem;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: $box-shadow;
+  @include d-flex;
+  justify-content: space-between;
+  padding-left: 7vw;
+  position: sticky;
+  z-index: 100;
+  top: 0;
+
+  &__hamburgerMenu {
+    height: 100vh;
     background-color: #fff;
-    box-shadow: $box-shadow;
-    @include d-flex;
-    justify-content: space-between;
-    padding-left: 7vw;
-    position: sticky;
-    z-index: 100;
+    width: 100vw;
+    display: none;
+    position: absolute;
+    z-index: 1;
     top: 0;
-
-    &__hamburgerMenu {
-        height: 100vh;
-        background-color: #fff;
-        width: 100vw;
-        display: none;
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        transform: translateX(-100vw);
-        padding: 2rem;
-        animation: showMenu 1s linear forwards;
-        &__close {
-            @include d-flex;
-            justify-content: flex-end;
-        }
+    left: 0;
+    transform: translateX(-100vw);
+    padding: 2rem;
+    animation: showMenu 1s linear forwards;
+    &__close {
+      @include d-flex;
+      justify-content: flex-end;
     }
-
-    &__navMenu {
-        display: none;
-        @media screen and (min-width: $tablet) {
-            @include d-flex;
-            margin-right: 2rem;
-            gap: 1rem;
+    &__nav {
+      height: 90vh;
+      @include d-flex-column;
+      justify-content: flex-start;
+      gap: 4rem;
+      &__imgReact {
+        margin-left: 4rem;
+      }
+      &__imgJava {
+        margin-right: 5rem;
+      }
+      &__items {
+        color: #555;
+        @include d-flex-column;
+        list-style-type: none;
+        gap: 2rem;
+        &__item {
+          transition: color, scale 1s;
+          will-change: color, scale;
+          font-size: 2rem;
         }
-        &__nav {
-            @include d-flex;
+        &__item:hover {
+          cursor: pointer;
+          color: #000;
+          scale: 1.1;
         }
-        &__search {
-            transition: color, scale 1s;
-            will-change: color, scale;
-            cursor: pointer;
-        }
-        &__search:hover {
-            cursor: pointer;
-            color: #000;
-            scale: 1.3;
-        }
-        &__items {
-            color: #555;
-            @include d-flex;
-            list-style-type: none;
-            &__item {
-                transition: color, scale 1s;
-                will-change: color, scale;
-                margin-right: 2rem;
-            }
-            &__item:hover {
-                cursor: pointer;
-                color: #000;
-                scale: 1.1;
-            }
-        }
+      }
     }
+  }
 
-    &__titleSection {
-        @include d-flex;
-        gap: 1rem;
+  &__navMenu {
+    display: none;
+    @media screen and (min-width: $tablet) {
+      @include d-flex;
+      margin-right: 2rem;
+      gap: 1rem;
     }
-
-    &__hamburgerSection {
+    &__nav {
+      @include d-flex;
+    }
+    &__search {
+      transition: color, scale 1s;
+      will-change: color, scale;
+      cursor: pointer;
+    }
+    &__search:hover {
+      cursor: pointer;
+      color: #000;
+      scale: 1.3;
+    }
+    &__items {
+      color: #555;
+      @include d-flex;
+      list-style-type: none;
+      &__item {
+        transition: color, scale 1s;
+        will-change: color, scale;
+        margin-right: 2rem;
+      }
+      &__item:hover {
         cursor: pointer;
-        margin-right: 7vw;
-        @media screen and (min-width: $tablet) {
-            display: none;
-        }
+        color: #000;
+        scale: 1.1;
+      }
     }
+  }
 
-    &__h2 {
-        font-weight: 700;
-        color: #2d2e2d;
+  &__titleSection {
+    @include d-flex;
+    gap: 1rem;
+  }
+
+  &__hamburgerSection {
+    cursor: pointer;
+    margin-right: 7vw;
+    @media screen and (min-width: $tablet) {
+      display: none;
     }
+  }
+
+  &__h2 {
+    font-weight: 700;
+    color: #2d2e2d;
+  }
 }
 
-
 @keyframes showMenu {
-    0% {
-        transform: translateX(-100vw);
-    }
-    100% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
