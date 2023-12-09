@@ -8,6 +8,37 @@ const Header = () => {
   const navigationSection = useRef(null);
   const closeHamburgerMenu = useRef(null);
 
+  const searchSection = useRef(null);
+  const searchIcon = useRef(null);
+
+  useEffect(() => {
+
+    const showSearchSectionHandler = () => {
+      searchSection.current.style.display = 'flex';
+    }
+
+    searchIcon.current.addEventListener('click', showSearchSectionHandler);
+
+    return(() => {
+      searchIcon.current.removeEventListener('click', showSearchSectionHandler);
+    })
+
+  }, [searchIcon]);
+
+  useEffect(() => {
+
+    const hideSearchSectionHandler = () => {
+      searchSection.current.style.display = 'none';
+    }
+
+    searchSection.current.addEventListener('click', hideSearchSectionHandler);
+
+    return(() => {
+      searchSection.current.removeEventListener('click', hideSearchSectionHandler);
+    })
+
+  }, [searchSection]);
+
   useEffect(() => {
     const showMenuHandler = () => {
       hamburgerMenu.current.style.display = "block";
@@ -58,6 +89,7 @@ const Header = () => {
             </ul>
           </div>
           <img
+          ref={searchIcon}
             className={s.header__navMenu__search}
             width="20"
             height="20"
@@ -73,6 +105,8 @@ const Header = () => {
             alt="menu-squared-2"
           />
         </section>
+
+        {/* Hamburger Menu */}
 
         <menu ref={hamburgerMenu} className={s.header__hamburgerMenu}>
           <section
@@ -125,6 +159,12 @@ const Header = () => {
             />
           </nav>
         </menu>
+
+        <section ref={searchSection} className={s.header__searchSection}>
+            <div className={s.header__searchSection__searchPlace}>
+
+            </div>
+        </section>
       </header>
     </>
   );

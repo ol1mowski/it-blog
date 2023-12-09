@@ -128,6 +128,23 @@
     font-weight: 700;
     color: #2d2e2d;
   }
+
+  &__searchSection {
+    display: none;
+    position: fixed;
+    backdrop-filter: blur(3px);
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    @include d-flex;
+    &__searchPlace {
+        width: 60%;
+        height: 20%;
+        border-radius: .5rem;
+        background-color: #dedede;
+    }
+  }
 }
 
 @keyframes showMenu {
