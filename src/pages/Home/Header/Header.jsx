@@ -10,6 +10,7 @@ const Header = () => {
 
   const searchSection = useRef(null);
   const searchIcon = useRef(null);
+  const searchWrapper = useRef(null);
 
   useEffect(() => {
 
@@ -51,6 +52,21 @@ const Header = () => {
       showHamburgerMenu.current.removeEventListener("click", showMenuHandler);
     };
   }, [showHamburgerMenu]);
+
+  useEffect(() => {
+
+    const dummy = (e) => {
+      e.stopPropagation();
+      console.log('dd');
+    }
+
+    searchWrapper.current.addEventListener('click', dummy);
+
+    return(() => {
+      searchWrapper.current.removeEventListener('click', dummy);
+    })
+
+  }, [searchWrapper]);
 
   useEffect(() => {
     const hideMenuHandler = () => {
@@ -161,7 +177,7 @@ const Header = () => {
         </menu>
 
         <section ref={searchSection} className={s.header__searchSection}>
-            <div className={s.header__searchSection__searchPlace}>
+            <div ref={searchWrapper} className={s.header__searchSection__searchPlace}>
 
             </div>
         </section>
