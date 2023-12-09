@@ -87,7 +87,13 @@ const Header = () => {
             />
           </section>
           <nav className={s.header__hamburgerMenu__nav}>
-          <img className={s.header__hamburgerMenu__nav__imgJava} width="100" height="100" src="https://img.icons8.com/dusk/100/java-coffee-cup-logo.png" alt="java-coffee-cup-logo"/>
+            <img
+              className={s.header__hamburgerMenu__nav__imgJava}
+              width="100"
+              height="100"
+              src="https://img.icons8.com/dusk/100/java-coffee-cup-logo.png"
+              alt="java-coffee-cup-logo"
+            />
             <ul className={s.header__hamburgerMenu__nav__items}>
               <li className={s.header__hamburgerMenu__nav__items__item}>
                 Recommended courses
@@ -95,9 +101,28 @@ const Header = () => {
               <li className={s.header__hamburgerMenu__nav__items__item}>
                 Books for programmer
               </li>
-              <li className={s.header__hamburgerMenu__nav__items__item}>About Author</li>
+              <li className={s.header__hamburgerMenu__nav__items__item}>
+                About Author
+              </li>
             </ul>
-            <img className={s.header__hamburgerMenu__nav__imgReact} width="200" height="200" src="https://img.icons8.com/clouds/300/react.png" alt="react"/>
+            <div className={s.header__hamburgerMenu__nav__search}>
+              <input
+              placeholder="Enter sth"
+                type="text"
+                name="search"
+                className={s.header__hamburgerMenu__nav__search__inp}
+              />
+              <button className={s.header__hamburgerMenu__nav__search__btn}>
+                Search
+              </button>
+            </div>
+            <img
+              className={s.header__hamburgerMenu__nav__imgReact}
+              width="200"
+              height="200"
+              src="https://img.icons8.com/clouds/300/react.png"
+              alt="react"
+            />
           </nav>
         </menu>
       </header>
