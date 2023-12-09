@@ -8,57 +8,78 @@ $dark-white-background-color: #f9f9f9;
 $nav-color: #fff;
 
 //box-shadow
-$box-shadow: 0 0.275rem 0.75rem -0.0625rem rgba(11, 15, 25, 0.06), 0 0.125rem 0.4rem -0.0625rem rgba(11, 15, 25, 0.03);
+$box-shadow: 0 0.275rem 0.75rem -0.0625rem rgba(11, 15, 25, 0.06),
+  0 0.125rem 0.4rem -0.0625rem rgba(11, 15, 25, 0.03);
 
 //mixins
 
 @mixin small-headers() {
-    margin-top: $article-margin;
-    color: $text-blue-color;
-    font-size: 1rem;
-    font-weight: 700;
-    text-align: center;
+  margin-top: $article-margin;
+  color: $text-blue-color;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 @mixin below-headers() {
-    text-align: center;
-    color: $text-dark-color;
-    font-size: 1.5rem;
-    line-height: 1.4;
-    margin-top: 1rem;
-    font-weight: 700;
+  text-align: center;
+  color: $text-dark-color;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-top: 1rem;
+  font-weight: 700;
 }
 
 @mixin d-flex() {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 @mixin d-flex-column() {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 @mixin nav() {
-    box-shadow: 0 0 10px rgba(0,0,0,.09);
-    background-color: $nav-color;
-    @include d-flex;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
+  background-color: $nav-color;
+  @include d-flex;
 }
 
 @mixin p() {
-    font-family: Mulish,sans-serif;
-    color: #555;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.6;
+  font-family: Mulish, sans-serif;
+  color: #555;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+@mixin btn() {
+  border-radius: 0.5rem;
+  border: none;
+  background-color: $text-blue-color;
+  color: #fff;
+  padding: 0.6rem;
+  transition: scale .7s;
+  will-change: scale;
+}
+
+@mixin btn-hover() {
+  scale: 1.1;
+}
+
+@mixin inp() {
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #dedede;
 }
 
 //breakpoint
-
 
 $mobile: 560px;
 $tablet: 768px;

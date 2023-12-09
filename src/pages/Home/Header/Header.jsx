@@ -178,7 +178,15 @@ const Header = () => {
 
         <section ref={searchSection} className={s.header__searchSection}>
             <div ref={searchWrapper} className={s.header__searchSection__searchPlace}>
-
+            <input
+              placeholder="Enter sth"
+                type="text"
+                name="search"
+                className={s.header__searchSection__searchPlace__inp}
+              />
+              <button className={s.header__searchSection__searchPlace__btn}>
+                Search
+              </button>
             </div>
         </section>
       </header>
