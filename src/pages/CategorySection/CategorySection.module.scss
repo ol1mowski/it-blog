@@ -1,0 +1,49 @@
+@import '../../config/sass/index.scss';
+
+.categoryContainer {
+    background-color: $white-background-color;
+    @include d-flex;
+    padding: 5rem;
+
+    &__wrapper {
+        @include d-flex-column;
+        gap: 2rem;
+        background-color: #fff;
+        box-shadow: $box-shadow;
+        border-radius: .7rem;
+        padding: 2rem;
+
+        @media screen and (min-width: $tablet) {
+            flex-direction: row;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        &__itemCategory {
+            &__content {
+                font-size: 2rem;
+                color: $text-dark-color;
+            }
+        }
+
+        &__item {
+            background-color: $white-background-color;
+            padding: .2rem 1.5rem;
+            border-radius: .7rem;
+            font-size: 1.2rem;
+            @include d-flex;
+            gap: .7rem;
+            box-shadow: $box-shadow;
+            font-weight: 500;
+            transition: scale .7s;
+            @media screen and (min-width: $tablet) {
+                padding: 0;
+            }
+        }
+
+        &__item:hover {
+            cursor: pointer;
+            scale: 1.1;
+        }
+    }
+}

@@ -6,10 +6,17 @@
   box-shadow: $box-shadow;
   @include d-flex;
   justify-content: space-between;
-  padding-left: 7vw;
   position: sticky;
   z-index: 100;
   top: 0;
+
+  @media screen and (min-width: $tablet) {
+    padding-left: 2rem;
+  }
+
+  @media screen and (min-width: $big-tablets) {
+    padding-left: 7rem;
+  }
 
   &__hamburgerMenu {
     height: 100vh;
@@ -22,6 +29,7 @@
     left: 0;
     transform: translateX(-100vw);
     padding: 2rem;
+    overflow-y: scroll;
     animation: showMenu 1s linear forwards;
     &__close {
       @include d-flex;
@@ -55,7 +63,7 @@
         color: $items-color;
         @include d-flex-column;
         list-style-type: none;
-        text-align: center;
+        align-items: flex-start;
         gap: 0.5rem;
         &__item {
           @include items-will-hover;
@@ -72,7 +80,7 @@
     display: none;
     @media screen and (min-width: $tablet) {
       @include d-flex;
-      margin-right: 2rem;
+      margin-right: 1rem;
       gap: 1rem;
     }
     &__nav {
