@@ -129,19 +129,23 @@
     &__searchPlace {
       border-radius: 0.5rem;
       @include d-flex;
-      gap: 1rem;
       &__btn {
         @include btn;
-        padding: 1rem 1.5rem;
+        border-radius: 0 .7rem .7rem 0;
+        padding: .93rem 1rem;
         cursor: pointer;
-      }
-      &__btn:hover {
-        @include btn-hover;
+        background-color: #2d2e2d;
+
       }
       &__inp {
         @include inp;
-        padding: 1rem 7rem;
+        border-radius: .7rem 0 0 .7rem;
+        background-color: #2d2e2d;
+        border: none;
+        padding: 1.1rem 7rem;
+        color: #fff;
       }
+
     }
   }
 }
@@ -153,4 +157,10 @@
   100% {
     transform: translateX(0);
   }
+}
+
+
+::placeholder {
+  color: #dedede;
+  font-size: 1rem;
 }
