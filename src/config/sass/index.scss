@@ -2,9 +2,10 @@
 
 $text-dark-color: #2d2e32;
 $text-blue-color: #147efb;
+$items-color: #555;
 
 //background colors
-$dark-white-background-color: #f9f9f9;
+$white-background-color: #f9f9f9;
 $nav-color: #fff;
 
 //box-shadow
@@ -12,6 +13,17 @@ $box-shadow: 0 0.275rem 0.75rem -0.0625rem rgba(11, 15, 25, 0.06),
   0 0.125rem 0.4rem -0.0625rem rgba(11, 15, 25, 0.03);
 
 //mixins
+
+@mixin items-will-hover() {
+  transition: color, scale 1s;
+  will-change: color, scale;
+}
+
+@mixin items-hover-effect() {
+  cursor: pointer;
+  color: #000;
+  scale: 1.1;
+}
 
 @mixin small-headers() {
   margin-top: $article-margin;
@@ -44,12 +56,6 @@ $box-shadow: 0 0.275rem 0.75rem -0.0625rem rgba(11, 15, 25, 0.06),
   flex-direction: column;
 }
 
-@mixin nav() {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.09);
-  background-color: $nav-color;
-  @include d-flex;
-}
-
 @mixin p() {
   font-family: Mulish, sans-serif;
   color: #555;
@@ -64,7 +70,7 @@ $box-shadow: 0 0.275rem 0.75rem -0.0625rem rgba(11, 15, 25, 0.06),
   background-color: $text-blue-color;
   color: #fff;
   padding: 0.6rem;
-  transition: scale .7s;
+  transition: scale 0.7s;
   will-change: scale;
 }
 

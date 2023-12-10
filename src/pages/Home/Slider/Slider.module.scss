@@ -70,13 +70,13 @@
     }
 
     &__category {
-      color: #147efb;
+      color: $text-blue-color;
       font-size: 1rem;
       font-weight: bold;
     }
 
     &__title {
-      color: #2d2e32;
+      color: $text-dark-color;
       font-size: 2rem;
       font-weight: bold;
     }
@@ -86,7 +86,7 @@
     }
 
     &__read {
-      color: #147efb;
+      color: $text-blue-color;
       font-size: 1rem;
       font-weight: bold;
 
@@ -111,13 +111,13 @@
       border-radius: 100%;
       width: .5rem;
       height: .5rem;
-      border: 1px solid #147efb;
+      border: 1px solid $text-blue-color;
       transition: all 1s;
       will-change: backgroundColor;
     }
 
     &__dot__active {
-      background-color: #147efb;
+      background-color: $text-blue-color;
     }
   }
 }
