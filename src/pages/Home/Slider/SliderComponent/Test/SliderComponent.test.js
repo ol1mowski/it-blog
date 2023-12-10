@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react"
-import Slider from "../Slider";
+import SliderComponent from "../SliderComponent";
 
 describe('Change Text Component',  () => {
 
     test('loading data check', async () => {
-        render(<Slider />);
+        render(<SliderComponent />);
     
         const postData = await screen.findAllByRole('h1');
         expect(postData).toHaveLength(0);
