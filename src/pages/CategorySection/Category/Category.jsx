@@ -8,17 +8,28 @@ const Category = ({ name, image, id }) => {
 
   useEffect(() => {
     const itemClickHandler = () => {
+      const prevItem = document.querySelector(
+        `.${s.categoryContainer__wrapper__item_active}`
+      );
+      if (prevItem) {
+        prevItem.classList.remove(
+          `${s.categoryContainer__wrapper__item_active}`
+        );
+      }
+
       const currentCategoryId = item.current.id;
       setCurrentCategory(currentCategoryId);
-      item.current.classList.add(`${s.categoryContainer__wrapper__item_active}`)
+      item.current.classList.add(
+        `${s.categoryContainer__wrapper__item_active}`
+      );
     };
 
     item.current.addEventListener("click", itemClickHandler);
+
     return () => {
       item.current.removeEventListener("click", itemClickHandler);
     };
-  }, [currentCategory, item]);
-
+  }, [currentCategory, item, setCurrentCategory]);
 
   return (
     <div ref={item} id={id} className={s.categoryContainer__wrapper__item}>
