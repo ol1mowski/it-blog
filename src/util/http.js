@@ -28,7 +28,7 @@ export const getImageUrl = async () => {
   }
 };
 
-async function fetchDatatoSlider(collectionName) {
+async function fetchData(collectionName) {
   const collectionRef = collection(db, collectionName);
 
   try {
@@ -40,7 +40,7 @@ async function fetchDatatoSlider(collectionName) {
   }
 }
 
-export function fetchPosts() {
+export function fetch() {
   const collectionName = "posts";
-  return fetchDatatoSlider(collectionName);
+  return fetchData(collectionName);
 }
