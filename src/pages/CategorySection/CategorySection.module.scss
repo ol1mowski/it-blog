@@ -4,6 +4,10 @@
     background-color: $white-background-color;
     @include d-flex;
     padding: 5rem;
+    @media screen and (min-width: $desktop) {
+        padding: 3rem 2rem;       
+    }
+    margin-bottom: 5rem;
 
     &__wrapper {
         @include d-flex-column;
@@ -15,15 +19,25 @@
 
         @media screen and (min-width: $tablet) {
             flex-direction: row;
-            padding: 1rem;
+            padding: 1.5rem 2.5rem;
             gap: 1rem;
+        }
+        @media screen and (min-width: 1024px) {
+            gap: 2rem;
         }
 
         &__itemCategory {
+            
             &__content {
                 font-size: 2rem;
                 color: $text-dark-color;
-            }
+                @media screen and (min-width: $tablet) {
+                    font-size: 1.5rem;
+                }
+                @media screen and (min-width: 1024px) {
+                    font-size: 1.7rem;
+                }
+            }   
         }
 
         &__item {
@@ -37,7 +51,21 @@
             font-weight: 500;
             transition: scale .7s;
             @media screen and (min-width: $tablet) {
-                padding: 0;
+                padding: .5rem;
+                font-size: 1.1rem;
+            }
+            @media screen and (min-width: 1024px) {
+                font-size: 1.3rem;
+            }
+            &__img {
+                @media screen and (min-width: $tablet) {
+                    width: 30px;
+                    height: 30px;
+                }
+                @media screen and (min-width: 1024px) {
+                    width: 50px;
+                    height: 50px;
+                }
             }
         }
 
