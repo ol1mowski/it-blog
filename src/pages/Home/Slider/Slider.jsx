@@ -1,7 +1,5 @@
 import s from "./Slider.module.scss";
 
-import loadingIcon from "../../../assets/loading_icon.gif";
-
 import { fetchPosts, getImageUrl } from "../../../util/http";
 import { useQuery } from "@tanstack/react-query";
 import SliderComponent from "./SliderComponent/SliderComponent";

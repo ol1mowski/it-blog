@@ -68,6 +68,9 @@
                 }
             }
         }
+        &__item_active {
+            background-color: green;
+        }
 
         &__item:hover {
             cursor: pointer;

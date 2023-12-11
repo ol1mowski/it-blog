@@ -34,7 +34,7 @@ const CategorySection = () => {
                         Categories:
                     </h2>
                 </div>
-                {CATEGORY_DATA.map(item => <Category key={item.id} name={item.name} image={item.image} />)}
+                {CATEGORY_DATA.map(item => <Category key={item.id} id={item.id} name={item.name} image={item.image} />)}
             </div>
         </section>
     );
