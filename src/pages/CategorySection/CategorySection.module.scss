@@ -50,6 +50,7 @@
             box-shadow: $box-shadow;
             font-weight: 500;
             transition: scale .7s;
+            will-change: transition, border;
             @media screen and (min-width: $tablet) {
                 padding: .5rem;
                 font-size: 1.1rem;
@@ -69,7 +70,7 @@
             }
         }
         &__item_active {
-            background-color: green;
+            border: 2px solid $text-blue-color;
         }
 
         &__item:hover {

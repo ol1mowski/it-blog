@@ -12,6 +12,8 @@ $nav-color: #fff;
 $box-shadow: 0 0.275rem 0.75rem -0.0625rem rgba(11, 15, 25, 0.06),
   0 0.125rem 0.4rem -0.0625rem rgba(11, 15, 25, 0.03);
 
+$box-shadow-category: 1px 1px 1px 1px $text-blue-color;
+
 //mixins
 
 @mixin items-will-hover() {
