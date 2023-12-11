@@ -1,31 +1,19 @@
+import { fetchCategory } from '../../util/http';
 import Category from './Category/Category';
 import s from './CategorySection.module.scss';
+import { useQuery } from '@tanstack/react-query';
 
 const CategorySection = () => {
 
-    const CATEGORY_DATA = [
-        {
-            id: 1,
-            name: 'All',
-            image: 'https://img.icons8.com/bubbles/50/code.png',
-        },
-        {
-            id: 2,
-            name: 'React',
-            image: 'https://img.icons8.com/clouds/50/react.png',
-        },
-        {
-            id: 3,
-            name: 'Web Development',
-            image: 'https://img.icons8.com/fluency/50/imac-settings.png',
-        },
-        {
-            id: 4,
-            name: 'Learning Tips',
-            image: 'https://img.icons8.com/clouds/50/apple-tips.png',
-        },
+    const { data } = useQuery({
+        queryKey: ['categories'],
+        queryFn: fetchCategory,
+    });
 
-    ]
+
+    const CATEGORY_DATA = data || [];
+
+    
     return (
         <section className={s.categoryContainer}>
             <div className={s.categoryContainer__wrapper}>

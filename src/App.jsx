@@ -10,11 +10,11 @@ function App() {
 
   return (
     <>
-      <CategoryContext.Provider value={{  currentCategory, setCurrentCategory}}>
+      <CategoryContext.Provider value={{ currentCategory, setCurrentCategory }}>
         <QueryClientProvider client={queryClient}>
           <Home />
+          <CategorySection />
         </QueryClientProvider>
-        <CategorySection />
       </CategoryContext.Provider>
     </>
   );

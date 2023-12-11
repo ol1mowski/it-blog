@@ -1,6 +1,6 @@
 import s from "./Slider.module.scss";
 
-import { fetch, getImageUrl } from "../../../util/http";
+import { fetchPosts, getImageUrl } from "../../../util/http";
 import { useQuery } from "@tanstack/react-query";
 import SliderComponent from "./SliderComponent/SliderComponent";
 import { memo } from "react";
@@ -9,7 +9,7 @@ import Loading from "../../../Components/UI/Loading";
 const Slider = memo(() => {
   const { data, status, isError, error } = useQuery({
     queryKey: ["posts"],
-    queryFn: fetch,
+    queryFn: fetchPosts,
   });
 
   const { data: imageData, status: imageStatus } = useQuery({

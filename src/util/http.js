@@ -40,7 +40,12 @@ async function fetchData(collectionName) {
   }
 }
 
-export function fetch() {
+export function fetchPosts() {
   const collectionName = "posts";
+  return fetchData(collectionName);
+}
+
+export function fetchCategory() {
+  const collectionName = "categories";
   return fetchData(collectionName);
 }
