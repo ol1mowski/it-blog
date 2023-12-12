@@ -1,3 +1,4 @@
+import Loading from '../../Components/UI/Loading';
 import { fetchCategory } from '../../util/http';
 import Category from './Category/Category';
 import s from './CategorySection.module.scss';
@@ -5,7 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const CategorySection = () => {
 
-    const { data } = useQuery({
+    const { data, status } = useQuery({
         queryKey: ['categories'],
         queryFn: fetchCategory,
     });
@@ -13,8 +14,9 @@ const CategorySection = () => {
 
     const CATEGORY_DATA = data || [];
 
-    
-    return (
+
+    if (status==='success' && data) {
+        return (
         <section className={s.categoryContainer}>
             <div className={s.categoryContainer__wrapper}>
                 <div className={s.categoryContainer__wrapper__itemCategory}>
@@ -23,6 +25,25 @@ const CategorySection = () => {
                     </h2>
                 </div>
                 {CATEGORY_DATA.map(item => <Category key={item.id} id={item.id} name={item.name} image={item.image} />)}
+            </div>
+        </section>
+    );
+
+} 
+if (status === 'error') {
+    <section className={s.categoryContainer}>
+            <div className={s.categoryContainer__wrapper}>
+               <h1>
+                Error
+               </h1>
+            </div>
+        </section>
+}
+    
+    return (
+        <section className={s.categoryContainer}>
+            <div className={s.categoryContainer__wrapper}>
+               <Loading />
             </div>
         </section>
     );
