@@ -2,17 +2,14 @@ import { memo, useEffect, useRef, useState } from "react";
 import s from "../Slider.module.scss";
 
 const SliderComponent = memo(({ data }) => {
-    
   const slide1 = useRef(null);
   const slide2 = useRef(null);
   const slide3 = useRef(null);
-
 
   const [category, setCategory] = useState(data[0].category);
   const [title, setTitle] = useState(data[0].title);
   const [description, setDescription] = useState(data[0].description);
   const [image, setImage] = useState(data[0].image);
-
 
   const [index, setIndex] = useState(0);
 
