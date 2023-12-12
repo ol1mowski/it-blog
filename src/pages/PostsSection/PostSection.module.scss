@@ -2,21 +2,20 @@
 
 .postsContainer {
   @include d-flex;
+  margin-bottom: 5vh;
   &__postsWrapper {
     @include d-flex-column;
     gap: 3rem;
     &__post {
       @include d-flex-column;
       align-items: flex-start;
-      gap: 2rem;
-      padding: 0;
+      gap: 1rem;
       width: 80vw;
-      padding: 1rem;
+      padding: 2rem;
       box-shadow: $box-shadow;
       border-radius: 0.7rem;
       &__img {
         width: 90%;
-        margin: 0 auto;
         border-radius: 0.7rem;
       }
       &__category {
