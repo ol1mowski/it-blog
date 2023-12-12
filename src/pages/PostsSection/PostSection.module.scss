@@ -3,44 +3,47 @@
 .postsContainer {
   @include d-flex;
   &__postsWrapper {
-      &__post {
-        @include d-flex-column;
-        align-items: flex-start;
-        gap: 1rem;
-        padding: 0;
-        width: 70vw;
-        padding: 1rem;
-        box-shadow: $box-shadow;
-        border-radius: .7rem;
-        &__img {
-            width: 100%;
-            border-radius: .7rem;
+    @include d-flex-column;
+    gap: 3rem;
+    &__post {
+      @include d-flex-column;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 0;
+      width: 80vw;
+      padding: 1rem;
+      box-shadow: $box-shadow;
+      border-radius: 0.7rem;
+      &__img {
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 0.7rem;
+      }
+      &__category {
+        color: $text-blue-color;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+
+      &__title {
+        color: $text-dark-color;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      &__text {
+        @include p;
+      }
+
+      &__read {
+        color: $text-blue-color;
+        font-size: 1rem;
+        font-weight: bold;
+
+        @media screen and (min-width: $desktop) {
+          margin-top: 1rem;
         }
-        &__category {
-            color: $text-blue-color;
-            font-size: 1rem;
-            font-weight: bold;
-          }
-      
-          &__title {
-            color: $text-dark-color;
-            font-size: 2rem;
-            font-weight: bold;
-          }
-      
-          &__text {
-            @include p;
-          }
-      
-          &__read {
-            color: $text-blue-color;
-            font-size: 1rem;
-            font-weight: bold;
-      
-            @media screen and (min-width: $desktop) {
-              margin-top: 1rem;
-            }
-        }
+      }
     }
   }
 }
