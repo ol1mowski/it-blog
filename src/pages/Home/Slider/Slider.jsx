@@ -12,22 +12,15 @@ const Slider = memo(() => {
     queryFn: fetchPosts,
   });
 
-  const { data: imageData, status: imageStatus } = useQuery({
-    queryKey: ["images"],
-    queryFn: getImageUrl,
-    gcTime: 100000,
-    staleTime: 100000,
-  });
-
   if (isError) {
     console.error("Error fetching posts:", error);
     throw error.message;
   }
 
-  if (status === "success" && imageStatus === "success" && imageData && data) {
+  if (status === "success" && data) {
     const contentData = data;
 
-    return <SliderComponent data={contentData} images={imageData} />;
+    return <SliderComponent data={contentData} />;
   }
 
   return (

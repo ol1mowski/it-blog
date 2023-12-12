@@ -9,13 +9,6 @@ const PostSection = () => {
     queryFnL: fetchPosts,
   });
 
-  const { data: imageData, status: imageStatus } = useQuery({
-    queryKey: ["images"],
-    queryFn: getImageUrl,
-    gcTime: 100000,
-    staleTime: 100000,
-  });
-
   const POSTS_DATA = data || [];
 
   return (
@@ -24,6 +17,7 @@ const PostSection = () => {
         {POSTS_DATA.map((item) => (
           <Post
             key={item.id}
+            image={item.image}
             category={item.category}
             title={item.title}
             description={item.description}

@@ -1,10 +1,10 @@
 import s from "../PostSection.module.scss";
 
 
-const Post = ({title, category, description}) => {
+const Post = ({title, category, description, image}) => {
   return (
     <div className={s.postsContainer__postsWrapper__post}>
-        <img className={s.postsContainer__postsWrapper__post__img} src="https://www.patterns.dev/img/reactjs/react-logo@3x.svg" alt="" />
+        <img className={s.postsContainer__postsWrapper__post__img} src={image} alt="" />
         <p className={s.postsContainer__postsWrapper__post__category}>{category}</p>
         <h3 className={s.postsContainer__postsWrapper__post__title}>{title}</h3>
         <p className={s.postsContainer__postsWrapper__post__text}>{description}</p>
