@@ -1,4 +1,5 @@
 import { fetchPosts, getImageUrl } from "../../util/http";
+import Newsletter from "./Newsletter/Newsletter";
 import Post from "./Post/Post";
 import s from "./PostSection.module.scss";
 import { useQuery } from "@tanstack/react-query";
@@ -24,6 +25,7 @@ const PostSection = () => {
           />
         ))}
       </section>
+      <Newsletter />
     </main>
   );
 };

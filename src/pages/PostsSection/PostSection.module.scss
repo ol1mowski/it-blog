@@ -1,8 +1,9 @@
 @import "../../config/sass/index.scss";
 
 .postsContainer {
-  @include d-flex;
+  @include d-flex-column;
   margin-bottom: 5vh;
+  gap: 5rem;
   &__postsWrapper {
     @include d-flex-column;
     gap: 3rem;
@@ -25,9 +26,7 @@
       }
 
       &__title {
-        color: $text-dark-color;
-        font-size: 2rem;
-        font-weight: bold;
+       @include header;
       }
 
       &__text {

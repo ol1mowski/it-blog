@@ -27,12 +27,10 @@ $box-shadow-category: 1px 1px 1px 1px $text-blue-color;
   scale: 1.1;
 }
 
-@mixin small-headers() {
-  margin-top: $article-margin;
-  color: $text-blue-color;
-  font-size: 1rem;
-  font-weight: 700;
-  text-align: center;
+@mixin header() {
+  color: $text-dark-color;
+  font-size: 1.7rem;
+  font-weight: bold;
 }
 
 @mixin below-headers() {
