@@ -73,6 +73,9 @@
       color: $text-blue-color;
       font-size: 1rem;
       font-weight: bold;
+      will-change: scale;
+      transition: scale 0.7s;
+      cursor: pointer;
     }
 
     &__title {
@@ -89,10 +92,16 @@
       color: $text-blue-color;
       font-size: 1rem;
       font-weight: bold;
+      will-change: scale;
+      transition: scale 0.7s;
+      cursor: pointer;
 
       @media screen and (min-width: $desktop) {
         margin-top: 1rem;
       }
+    }
+    &__category:hover, &__read:hover {
+      scale: 1.1;
     }
   }
 
