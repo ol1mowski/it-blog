@@ -6,7 +6,11 @@
   gap: 5rem;
   &__postsWrapper {
     @include d-flex-column;
-    gap: 3rem;
+    gap: 5rem;
+    @media screen and (min-width: $tablet) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
     &__post {
       @include d-flex-column;
       align-items: flex-start;
@@ -15,6 +19,9 @@
       padding: 2rem;
       box-shadow: $box-shadow;
       border-radius: 0.7rem;
+      @media screen and (min-width: $tablet) {
+        width: 40vw;
+      }
       &__img {
         width: 90%;
         border-radius: 0.7rem;
@@ -26,7 +33,7 @@
       }
 
       &__title {
-       @include header;
+        @include header;
       }
 
       &__text {
@@ -37,10 +44,7 @@
         color: $text-blue-color;
         font-size: 1rem;
         font-weight: bold;
-
-        @media screen and (min-width: $desktop) {
-          margin-top: 1rem;
-        }
+        margin-top: 1rem;
       }
     }
   }
