@@ -4,6 +4,10 @@
   @include d-flex-column;
   margin-bottom: 5vh;
   gap: 5rem;
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;   
+    gap: 1rem;
+  }
   &__postsWrapper {
     @include d-flex-column;
     gap: 5rem;
@@ -11,6 +15,7 @@
       flex-direction: row;
       flex-wrap: wrap;
     }
+
     &__post {
       @include d-flex-column;
       align-items: flex-start;
@@ -21,6 +26,9 @@
       border-radius: 0.7rem;
       @media screen and (min-width: $tablet) {
         width: 40vw;
+      }
+      @media screen and (min-width: $desktop) {
+        width: 25vw;
       }
       &__img {
         width: 90%;

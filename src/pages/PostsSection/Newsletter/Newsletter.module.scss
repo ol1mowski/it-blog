@@ -3,6 +3,7 @@
 .newsletterContainer {
   @include d-flex-column;
   border-radius: 0.7rem;
+
   &__wrapper {
     @include d-flex-column;
     box-shadow: $box-shadow;
@@ -10,65 +11,88 @@
     padding: 2rem;
     margin: 0 auto;
     gap: 2rem;
+
     @media screen and (min-width: $mobile) {
       padding: 3rem;
     }
+
     @media screen and (min-width: $tablet) {
       width: 50vw;
     }
+
+    @media screen and (min-width: $desktop) {
+      width: 30vw;
+      margin-right: 3rem;
+    }
+
     &__img {
       width: 80%;
       border-radius: 0.7rem;
+
       @media screen and (min-width: $tablet) {
         width: 100%;
       }
     }
+
     &__header {
       @include header;
+
       @media screen and (min-width: $mobile) {
         font-size: 2rem;
       }
     }
+
     &__benefits {
       list-style-image: url("../../../assets/check_icon.svg");
       padding: 0 2rem 0 5vw;
+
       @media screen and (min-width: $mobile) {
         padding-left: 12vw;
       }
+
       @media screen and (min-width: $tablet) {
         padding-left: 5vw;
       }
     }
+
     &__benefit {
       @include p;
     }
+
     &__inputSection {
       @include d-flex-column;
       gap: 1rem;
       width: 100%;
+
       &__inpWrapper {
         gap: 0.5rem;
         @include d-flex;
         width: 100%;
         padding-left: 5vw;
         justify-content: flex-start;
+
         @media screen and (min-width: $mobile) {
           padding-left: 12vw;
         }
+
         @media screen and (min-width: $tablet) {
           padding-left: 2vw;
         }
+
         &__inp {
           @include inp;
         }
+
         &__btn {
           @include btn;
           padding: 0.7rem;
         }
+
         &__btn:hover {
           @include btn-hover;
         }
       }
+
       &__infoWrapper {
         @include d-flex;
         justify-content: flex-start;
@@ -77,9 +101,11 @@
         color: $text-dark-color;
         text-align: left;
         width: 100%;
+
         @media screen and (min-width: $mobile) {
           padding-left: 12vw;
         }
+
         @media screen and (min-width: $tablet) {
           padding-left: 2vw;
         }
