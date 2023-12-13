@@ -4,9 +4,11 @@
     background-color: $white-background-color;
     @include d-flex;
     padding: 5rem;
+
     @media screen and (min-width: $desktop) {
-        padding: 3rem 2rem;       
+        padding: 3rem 2rem;
     }
+
     margin-bottom: 5rem;
 
     &__wrapper {
@@ -17,27 +19,25 @@
         border-radius: .7rem;
         padding: 2rem;
 
-        @media screen and (min-width: $tablet) {
-            flex-direction: row;
-            padding: 1.5rem 2.5rem;
-            gap: 1rem;
-        }
         @media screen and (min-width: 1024px) {
             gap: 2rem;
+            flex-direction: row;
         }
 
         &__itemCategory {
-            
+
             &__content {
                 font-size: 2rem;
                 color: $text-dark-color;
-                @media screen and (min-width: $tablet) {
+
+                @media screen and (min-width: 1024px) {
                     font-size: 1.5rem;
                 }
-                @media screen and (min-width: 1024px) {
+                @media screen and (min-width: $desktop) {
                     font-size: 1.7rem;
                 }
-            }   
+
+            }
         }
 
         &__item {
@@ -51,24 +51,15 @@
             font-weight: 500;
             transition: scale .7s;
             will-change: transition, border;
-            @media screen and (min-width: $tablet) {
-                padding: .5rem;
-                font-size: 1.1rem;
-            }
+
             @media screen and (min-width: 1024px) {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
-            &__img {
-                @media screen and (min-width: $tablet) {
-                    width: 30px;
-                    height: 30px;
-                }
-                @media screen and (min-width: 1024px) {
-                    width: 50px;
-                    height: 50px;
-                }
+            @media screen and (min-width: $desktop) {
+                font-size: 1.4rem;
             }
         }
+
         &__item_active {
             border: 2px solid $text-blue-color;
         }
