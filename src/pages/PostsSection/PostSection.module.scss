@@ -33,6 +33,10 @@
       &__img {
         width: 90%;
         border-radius: 0.7rem;
+        @media screen and (min-width: 1700px) {
+          width: 20rem;
+          margin-left: 1rem;
+        }
       }
       &__category {
         color: $text-blue-color;
