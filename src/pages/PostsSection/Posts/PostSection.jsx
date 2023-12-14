@@ -4,11 +4,14 @@ import s from "../PostsStyle/PostSection.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { useContext, useEffect, useState } from "react";
 import { fetchPosts } from '../../../util/http';
+import SearchCategoryContext from '../../../Context/SearchCategoryContext';
 
 const PostSection = () => {
   const [postData, setPostData] = useState([]);
 
   const { currentCategory } = useContext(CategoryContext);
+
+  const { searchCategory } = useContext(SearchCategoryContext);
 
   const { data } = useQuery({
     queryKey: ["posts"],
