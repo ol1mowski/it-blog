@@ -11,6 +11,7 @@ function App() {
   const [currentCategory, setCurrentCategory] = useState(1);
   const [searchCategory, setSearchCategory] = useState('All');
 
+
   return (
     <>
       <SearchCategoryContext.Provider value={{searchCategory, setSearchCategory}}>
