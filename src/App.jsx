@@ -7,7 +7,7 @@ import { useState } from "react";
 import PostSection from "./pages/PostsSection/PostSection";
 
 function App() {
-  const [currentCategory, setCurrentCategory] = useState(null);
+  const [currentCategory, setCurrentCategory] = useState(1);
 
   return (
     <>
