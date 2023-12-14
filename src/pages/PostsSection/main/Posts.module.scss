@@ -1,0 +1,6 @@
+@import '../../../config/sass/index.scss';
+
+.container {
+    @include d-flex;
+    justify-content: space-around;
+}

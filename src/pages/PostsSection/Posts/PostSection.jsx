@@ -1,10 +1,9 @@
-import CategoryContext from "../../Context/categoryContext";
-import { fetchPosts, getImageUrl } from "../../util/http";
-import Newsletter from "./Newsletter/Newsletter";
-import Post from "./Post/Post";
-import s from "./PostSection.module.scss";
+import CategoryContext from "../../../Context/categoryContext";
+import Post from "../Post/Post";
+import s from "../PostsStyle/PostSection.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { useContext, useEffect, useState } from "react";
+import { fetchPosts } from '../../../util/http';
 
 const PostSection = () => {
   const [postData, setPostData] = useState([]);
@@ -65,7 +64,6 @@ const PostSection = () => {
           />
         ))}
       </section>
-      <Newsletter />
     </main>
   );
 };

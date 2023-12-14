@@ -1,7 +1,9 @@
-import s from "../PostSection.module.scss";
+import s from "../PostsStyle/PostSection.module.scss";
 
 
 const Post = ({title, category, description, image}) => {
+
+
   return (
     <div className={s.postsContainer__postsWrapper__post}>
         <img className={s.postsContainer__postsWrapper__post__img} src={image} alt="" />
