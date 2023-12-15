@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 import s from "../Header.module.scss";
 import SearchCategoryContext from "../../../../Context/SearchCategoryContext";
-import { ref } from 'firebase/storage';
+import search from '../../../../assets/search.svg';
 
 const HamburgerMenu = ({ showHamburgerMenu }) => {
   const closeHamburgerMenu = useRef(null);
@@ -100,16 +100,19 @@ const HamburgerMenu = ({ showHamburgerMenu }) => {
           </li>
         </ul>
         <div className={s.header__hamburgerMenu__nav__search}>
-          <input
-            ref={searchCategoryInput}
-            onKeyDown={categoryKeyHandler}
-            placeholder="Enter sth"
-            type="text"
-            name="search"
-            className={s.header__hamburgerMenu__nav__search__inp}
-          />
-          <button ref={searchButton} className={s.header__hamburgerMenu__nav__search__btn}>
-            Search
+        <input
+          ref={searchCategoryInput}
+          onKeyDown={categoryKeyHandler}
+          placeholder="Enter category"
+          type="text"
+          name="search"
+          className={s.header__hamburgerMenu__nav__search__inp}
+        />
+          <button
+            ref={searchButton}
+            className={s.header__hamburgerMenu__nav__search__btn}
+          >
+            <img width="20" height="20" src={search} alt="search--v1" />
           </button>
         </div>
         <img

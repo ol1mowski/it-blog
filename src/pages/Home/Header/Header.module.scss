@@ -42,15 +42,20 @@
       gap: 3rem;
       &__search {
         @include d-flex;
-        gap: 0.4rem;
-        &__inp {
-          @include inp;
-        }
         &__btn {
           @include btn;
+          border-radius: 0 .7rem .7rem 0;
+          padding: .93rem 1rem;
+          cursor: pointer;
+          background-color: #2d2e2d;
         }
-        &__btn:hover {
-          @include btn-hover;
+        &__inp {
+          @include inp;
+          border-radius: .7rem 0 0 .7rem;
+          background-color: #2d2e2d;
+          border: none;
+          padding: 1.1rem 1rem;
+          color: #fff;
         }
       }
       &__imgReact {

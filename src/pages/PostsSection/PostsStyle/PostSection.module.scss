@@ -1,5 +1,9 @@
 @import "../../../config/sass/index.scss";
 
+#posts {
+  scroll-margin: 10rem;
+}
+
 .postsContainer {
   @include d-flex-column;
   margin-bottom: 5vh;
