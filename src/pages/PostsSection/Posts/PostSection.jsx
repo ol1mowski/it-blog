@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useContext, useEffect, useState } from "react";
 import { fetchPosts } from "../../../util/http";
 import SearchCategoryContext from "../../../Context/SearchCategoryContext";
+import Newsletter from "../Newsletter/Newsletter";
 
 const PostSection = () => {
   const [postData, setPostData] = useState([]);
@@ -79,7 +80,7 @@ const PostSection = () => {
     }
   }, [currentCategory]);
   return (
-    <main className={s.postsContainer}>
+    <main id='posts' className={s.postsContainer}>
       <section className={s.postsContainer__postsWrapper}>
         {found === true ? (
           postData.map((item) => (
@@ -95,6 +96,7 @@ const PostSection = () => {
           <h1>Category no found</h1>
         )}
       </section>
+      <Newsletter />
     </main>
   );
 };

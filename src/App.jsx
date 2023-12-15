@@ -4,8 +4,8 @@ import { queryClient } from "./util/http";
 import CategorySection from "./pages/CategorySection/CategorySection";
 import CategoryContext from "./Context/CategoryContext";
 import { useState } from "react";
-import PostsSection from "./pages/PostsSection/main/PostsSection";
 import SearchCategoryContext from "./Context/SearchCategoryContext";
+import PostSection from './pages/PostsSection/Posts/PostSection';
 
 function App() {
   const [currentCategory, setCurrentCategory] = useState(1);
@@ -21,7 +21,7 @@ function App() {
           <QueryClientProvider client={queryClient}>
             <Home />
             <CategorySection />
-            <PostsSection />
+            <PostSection />
           </QueryClientProvider>
         </CategoryContext.Provider>
       </SearchCategoryContext.Provider>

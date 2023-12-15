@@ -1,10 +1,18 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { useEffect } from "react";
 
-import s from '../Header.module.scss';
+import s from "../Header.module.scss";
+import SearchCategoryContext from "../../../../Context/SearchCategoryContext";
+import { ref } from 'firebase/storage';
 
 const HamburgerMenu = ({ showHamburgerMenu }) => {
   const closeHamburgerMenu = useRef(null);
+
+  const { setSearchCategory } = useContext(SearchCategoryContext);
+
+  const searchButton = useRef(null);
+
+  const searchCategoryInput = useRef(null);
 
   const hamburgerMenu = useRef(null);
   useEffect(() => {
@@ -30,6 +38,34 @@ const HamburgerMenu = ({ showHamburgerMenu }) => {
       closeHamburgerMenu.current.removeEventListener("click", hideMenuHandler);
     };
   }, [closeHamburgerMenu]);
+
+  const categoryKeyHandler = (e) => {
+    if (e.key === "Enter") {
+      setSearchCategory(e.target.value);
+      e.target.value = "";
+      hamburgerMenu.current.style.display = "none";
+      const postsElement = document.getElementById("posts");
+      postsElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+
+  useEffect(() => {
+    const categoryClickHandler = (e) => {
+      const searchValue = searchCategoryInput.current.value;
+      setSearchCategory(searchValue);
+      e.target.value = "";
+      hamburgerMenu.current.style.display = "none";
+      const postsElement = document.getElementById('posts');
+      postsElement.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    searchButton.current.addEventListener("click", categoryClickHandler);
+
+    return () => {
+      searchButton.current.removeEventListener("click", categoryClickHandler);
+    };
+  }, [searchButton]);
 
   return (
     <menu ref={hamburgerMenu} className={s.header__hamburgerMenu}>
@@ -65,12 +101,14 @@ const HamburgerMenu = ({ showHamburgerMenu }) => {
         </ul>
         <div className={s.header__hamburgerMenu__nav__search}>
           <input
+            ref={searchCategoryInput}
+            onKeyDown={categoryKeyHandler}
             placeholder="Enter sth"
             type="text"
             name="search"
             className={s.header__hamburgerMenu__nav__search__inp}
           />
-          <button className={s.header__hamburgerMenu__nav__search__btn}>
+          <button ref={searchButton} className={s.header__hamburgerMenu__nav__search__btn}>
             Search
           </button>
         </div>
