@@ -63,6 +63,8 @@ const SearchSetion = ({ searchIcon }) => {
       setSearchCategory(e.target.value);
       e.target.value = "";
       searchSection.current.style.display = "none";
+      const postsElement = document.getElementById('posts');
+      postsElement.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -72,6 +74,8 @@ const SearchSetion = ({ searchIcon }) => {
       setSearchCategory(searchValue);
       e.target.value = "";
       searchSection.current.style.display = "none";
+      const postsElement = document.getElementById('posts');
+      postsElement.scrollIntoView({ behavior: 'smooth' });
     };
 
     searchButton.current.addEventListener("click", categoryClickHandler);
@@ -92,14 +96,12 @@ const SearchSetion = ({ searchIcon }) => {
           name="search"
           className={s.header__searchSection__searchPlace__inp}
         />
-        <a href="#rr">
           <button
             ref={searchButton}
             className={s.header__searchSection__searchPlace__btn}
           >
             <img width="20" height="20" src={search} alt="search--v1" />
           </button>
-        </a>
       </div>
     </section>
   );

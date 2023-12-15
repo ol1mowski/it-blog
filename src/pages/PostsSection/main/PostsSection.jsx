@@ -5,7 +5,7 @@ import Newsletter from '../Newsletter/Newsletter';
 
 const PostsSection = () => {
   return (
-    <section className={s.container}>
+    <section id='posts' className={s.container}>
         <PostSection />
         <Newsletter />
     </section>

@@ -13,6 +13,8 @@ const PostSection = () => {
 
   const { searchCategory } = useContext(SearchCategoryContext);
 
+  const [found, setFound] = useState(true);
+
   const { data } = useQuery({
     queryKey: ["posts"],
     queryFnL: fetchPosts,
@@ -24,21 +26,28 @@ const PostSection = () => {
     }
   }, [data]);
 
+
   useEffect(() => {
     switch (searchCategory.toLowerCase()) {
       case "react":
         setCurrentCategory(2);
+        setFound(true);
         break;
       case "web development":
         setCurrentCategory(3);
+        setFound(true);
         break;
-      case "Learn Tips":
+      case "learn tips":
         setCurrentCategory(4);
+        setFound(true);
         break;
       default:
-        console.log('category no found');
+        if (searchCategory !== '') {
+          setFound(false);
+        }
     }
   }, [searchCategory]);
+
 
   useEffect(() => {
     if (data) {
@@ -69,19 +78,22 @@ const PostSection = () => {
       }
     }
   }, [currentCategory]);
-
   return (
     <main className={s.postsContainer}>
       <section className={s.postsContainer__postsWrapper}>
-        {postData.map((item) => (
-          <Post
-            key={item.id}
-            image={item.image}
-            category={item.category}
-            title={item.title}
-            description={item.description}
-          />
-        ))}
+        {found === true ? (
+          postData.map((item) => (
+            <Post
+              key={item.id}
+              image={item.image}
+              category={item.category}
+              title={item.title}
+              description={item.description}
+            />
+          ))
+        ) : (
+          <h1>Category no found</h1>
+        )}
       </section>
     </main>
   );

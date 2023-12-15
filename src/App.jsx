@@ -9,7 +9,7 @@ import SearchCategoryContext from "./Context/SearchCategoryContext";
 
 function App() {
   const [currentCategory, setCurrentCategory] = useState(1);
-  const [searchCategory, setSearchCategory] = useState('All');
+  const [searchCategory, setSearchCategory] = useState('');
 
 
   return (
