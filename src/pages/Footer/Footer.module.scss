@@ -1,0 +1,19 @@
+@import "../../config/sass/index.scss";
+
+.footerContainer {
+  margin-top: 15rem;
+  background-color: #2d2e2d;
+  @include d-flex-column;
+  padding: 2rem;
+  &__name {
+    @include d-flex;
+    &__wrapper {
+      @include d-flex;
+      gap: 2rem;
+      &__h3 {
+        color: #fff;
+        font-size: 2rem;
+      }
+    }
+  }
+}
