@@ -12,7 +12,7 @@ const Footer = () => {
             alt="programming-flag"
           />
           <h3 className={s.footerContainer__name__wrapper__h3}>
-            It-blog for programmers.com
+            IT-Blog for programmers.com
           </h3>
         </div>
       </section>
@@ -56,7 +56,7 @@ const Footer = () => {
           <div className={s.footerContainer__navigation__wrapper__sources}>
             <div className={s.footerContainer__navigation__wrapper__sources__source}>
             <img width="50" height="50" src="https://img.icons8.com/color/50/youtube-play.png" alt="youtube-play"/>
-              <p className={s.footerContainer__navigation__wrapper__sources__source__content}>You Tube</p>
+              <p className={s.footerContainer__navigation__wrapper__sources__source__content}>YouTube</p>
             </div>
             <div className={s.footerContainer__navigation__wrapper__sources__source}>
             <img width="50" height="50" src="https://img.icons8.com/clouds/50/contact-card.png" alt="contact-card"/>
@@ -64,6 +64,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
+      </section>
+      <section className={s.footerContainer__signature}>
+        <h4 className={s.footerContainer__signature__h4}>Designed by Oliwier Markiewicz</h4>
       </section>
     </footer>
   );
