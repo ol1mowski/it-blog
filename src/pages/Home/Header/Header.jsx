@@ -1,6 +1,7 @@
 import s from "./Header.module.scss";
 import { useRef } from "react";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
+import { Outlet } from 'react-router-dom';
 import SearchSetion from "./SearchSection/SearchSetion";
 
 const Header = () => {
@@ -58,6 +59,7 @@ const Header = () => {
 
         <SearchSetion searchIcon={searchIcon} />
       </header>
+      <Outlet />
     </>
   );
 };
