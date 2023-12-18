@@ -7,29 +7,74 @@
   @include d-flex-column;
   padding: 2rem;
   gap: 3rem;
+  @media screen and (min-width: $big-tablets) {
+   padding: 2rem 10vw;
+  }
+  &__top {
+    width: 100%;
+    @include d-flex-column;
+    gap: 5rem;
+    @media screen and (min-width: $big-tablets) {
+      flex-direction: row;
+      align-items: flex-start;
+      margin-top: 3rem;
+    }
+  }
   &__name {
     @include d-flex;
     &__wrapper {
-      @include d-flex;
-      gap: 2rem;
-      &__h3 {
-        color: #fff;
-        font-size: 1.7rem;
+      @include d-flex-column;
+      @media screen and (min-width: $big-tablets){
+        gap: 3rem;
+        justify-content: flex-start;
+      }
+      &__header {
+        @include d-flex;
+        gap: 1rem;
+        &__h3 {
+          color: #fff;
+          font-size: 1.5rem;
+          @media screen and (min-width: $mobile) {
+            font-size: 1.7rem;
+          }
+          @media screen and (min-width: $desktop) {
+            font-size: 2.2rem;
+          }
+        }
+      }
+      &__img {
+        display: none;
+        @media screen and (min-width: $big-tablets) {
+          display: block;
+          animation: opacityAnimation 8s infinite forwards;
+          width: 100%;
+        }
       }
     }
   }
   &__navigation {
     width: 100%;
-    margin-left: 2rem;
+    @include d-flex;
+    @media screen and (min-width: $big-tablets) {
+      justify-content: flex-end;
+    }
     &__wrapper {
-        @include d-flex-column;
-        gap: 2rem;
-        align-items: flex-start;
+      @include d-flex-column;
+      gap: 2rem;
+      align-items: flex-start;
       color: #fff;
       &__nav {
+        margin-left: 2rem;
+
         &__h3 {
           margin-bottom: 1rem;
           font-size: 1.7rem;
+          @media screen and (min-width: $mobile) {
+            font-size: 1.9rem;
+          }
+          @media screen and (min-width: $desktop) {
+            font-size: 2.2rem;
+          }
         }
         &__items {
           @include d-flex-column;
@@ -42,21 +87,36 @@
         }
       }
       &__sources {
+        width: 100%;
+
         @include d-flex;
         gap: 2rem;
-        align-items: flex-start;
+        justify-content: flex-start;
         &__source {
-            @include d-flex;
-            gap: .5rem;
-            font-size: 1.3rem;
+          @include d-flex;
+          gap: 0.5rem;
+          font-size: 1.3rem;
         }
-    }
+      }
     }
   }
   &__signature {
     &__h4 {
-        font-size: .8rem;
-        color: #fff;
+      font-size: 0.8rem;
+      color: #fff;
     }
+  }
+}
+
+
+@keyframes opacityAnimation {
+  0% {
+    opacity: .3;
+  }
+  50% {
+    opacity: .9;
+  }
+  100% {
+    opacity: .5;
   }
 }
