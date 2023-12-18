@@ -8,7 +8,7 @@
   padding: 2rem;
   gap: 3rem;
   @media screen and (min-width: $big-tablets) {
-   padding: 2rem 10vw;
+    padding: 2rem 10vw;
   }
   &__top {
     width: 100%;
@@ -24,7 +24,7 @@
     @include d-flex;
     &__wrapper {
       @include d-flex-column;
-      @media screen and (min-width: $big-tablets){
+      @media screen and (min-width: $big-tablets) {
         gap: 3rem;
         justify-content: flex-start;
       }
@@ -82,13 +82,19 @@
           align-items: flex-start;
 
           &__item {
+            cursor: pointer;
             font-size: 1.2rem;
+            transition: scale, color 0.7s;
+            will-change: color, scale;
+          }
+          &__item:hover {
+            scale: 1.1;
+            color: $text-blue-color;
           }
         }
       }
       &__sources {
         width: 100%;
-
         @include d-flex;
         gap: 2rem;
         justify-content: flex-start;
@@ -96,6 +102,9 @@
           @include d-flex;
           gap: 0.5rem;
           font-size: 1.3rem;
+          transition: color, scale 0.7s;
+          will-change: color, scale;
+          cursor: pointer;
         }
       }
     }
@@ -108,15 +117,24 @@
   }
 }
 
-
 @keyframes opacityAnimation {
   0% {
-    opacity: .3;
+    opacity: 0.3;
   }
   50% {
-    opacity: .9;
+    opacity: 0.9;
   }
   100% {
-    opacity: .5;
+    opacity: 0.5;
   }
+}
+
+#yt:hover {
+  scale: 1.1;
+  color: $text-red-color;
+}
+
+#contact:hover {
+  scale: 1.1;
+  color: $text-blue-color;
 }

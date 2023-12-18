@@ -71,6 +71,7 @@ const Footer = () => {
                 className={
                   s.footerContainer__navigation__wrapper__sources__source
                 }
+                id={s.yt}
               >
                 <img
                   width="50"
@@ -87,6 +88,7 @@ const Footer = () => {
                 </p>
               </div>
               <div
+               id={s.contact}
                 className={
                   s.footerContainer__navigation__wrapper__sources__source
                 }
