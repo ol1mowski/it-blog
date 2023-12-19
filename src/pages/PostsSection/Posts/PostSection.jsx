@@ -16,7 +16,7 @@ const PostSection = () => {
 
   const [found, setFound] = useState(true);
 
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["posts"],
     queryFnL: fetchPosts,
   });
@@ -26,7 +26,6 @@ const PostSection = () => {
       setPostData(data);
     }
   }, [data]);
-
 
   useEffect(() => {
     switch (searchCategory.toLowerCase()) {
@@ -43,12 +42,11 @@ const PostSection = () => {
         setFound(true);
         break;
       default:
-        if (searchCategory !== '') {
+        if (searchCategory !== "") {
           setFound(false);
         }
     }
   }, [searchCategory]);
-
 
   useEffect(() => {
     if (data) {
@@ -80,11 +78,12 @@ const PostSection = () => {
     }
   }, [currentCategory]);
   return (
-    <main id='posts' className={s.postsContainer}>
+    <main id="posts" className={s.postsContainer}>
       <section className={s.postsContainer__postsWrapper}>
         {found === true ? (
           postData.map((item) => (
             <Post
+              isLoading={isLoading}
               key={item.id}
               image={item.image}
               category={item.category}
