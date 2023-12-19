@@ -73,6 +73,7 @@ $box-shadow-category: 1px 1px 1px 1px $text-blue-color;
   padding: 0.6rem;
   transition: scale 0.7s;
   will-change: scale;
+  cursor: pointer;
 }
 
 @mixin btn-hover() {

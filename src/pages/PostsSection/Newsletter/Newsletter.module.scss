@@ -126,3 +126,27 @@
     }
   }
 }
+
+.valid {
+  border: 2px solid #5cb85c;
+}
+
+.unvalid {
+  border: 1px solid $text-red-color;
+animation: unvalidAnimation .3s linear;
+}
+
+@keyframes unvalidAnimation {
+    0% {
+      transform: translateX(.5vw);
+    }
+    50% {
+      transform: translateX(-.5vw);
+    }
+    75% {
+      transform: translateX(.5vw);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
