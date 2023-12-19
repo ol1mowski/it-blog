@@ -11,10 +11,14 @@ const Newsletter = () => {
   const [errorInfo, setErrorInfo] = useState("");
 
   useEffect(() => {
-    const validInputHandler = () => {
+    const validateEmail = (email) => {
+      return email.length >= 8 && email.includes("@");
+    };
+  
+    const handleValidInput = () => {
       const newsEmail = newsInp.current.value;
-
-      if (newsEmail.length >= 8 && newsEmail.indexOf("@") !== -1) {
+  
+      if (validateEmail(newsEmail)) {
         setIsValidate(true);
         setErrorInfo("");
         newsInp.current.classList.remove(s.unvalid);
@@ -23,20 +27,21 @@ const Newsletter = () => {
       } else {
         setIsValidate(false);
         if (newsEmail.indexOf("@") === -1) {
-          setErrorInfo("Syntaxt email address");
+          setErrorInfo("Syntax error in email address");
         } else if (newsEmail.length < 8) {
-          setErrorInfo("email must be at least 8 characters");
+          setErrorInfo("Email must be at least 8 characters long");
         }
         newsInp.current.classList.add(s.unvalid);
       }
     };
-
-    newsBtn.current.addEventListener("click", validInputHandler);
-
+  
+    newsBtn.current.addEventListener("click", handleValidInput);
+  
     return () => {
-      newsBtn.current.removeEventListener("click", validInputHandler);
+      newsBtn.current.removeEventListener("click", handleValidInput);
     };
   }, [newsBtn]);
+  
 
   return (
     <section className={s.newsletterContainer}>
