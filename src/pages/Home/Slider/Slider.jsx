@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import SliderComponent from "./SliderComponent/SliderComponent";
 import { memo } from "react";
 import Loading from "../../../Components/UI/Loading/Loading";
+import Error from "../../../Components/UI/Error/Error";
 
 const Slider = memo(() => {
   const { data, status, isError, error } = useQuery({
@@ -13,8 +14,11 @@ const Slider = memo(() => {
   });
 
   if (isError) {
-    console.error("Error fetching posts:", error);
-    throw error.message;
+    return (
+      <main className={s.sliderContainerLoading}>
+        <Error message={error.message}/>
+      </main>
+    );
   }
 
   if (status === "success" && data) {
