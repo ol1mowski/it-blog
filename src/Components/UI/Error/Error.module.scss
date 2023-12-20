@@ -2,9 +2,9 @@
 
 .errorContainer {
     @include d-flex-column;
-    background-color: #F8D7D9;
+    background-color: $error-red-background;
     width: 50vw;
     height: 20vh;
-    color: #650a0a;
+    color: $error-red-fontColor;
     border-radius: .7rem;
 }

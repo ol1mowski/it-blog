@@ -8,6 +8,7 @@ import SearchCategoryContext from "../../../Context/SearchCategoryContext";
 import Newsletter from "../Newsletter/Newsletter";
 import Loading from "../../../Components/UI/Loading/Loading";
 import Error from "../../../Components/UI/Error/Error";
+import CategoryNoFound from "../../../Components/UI/CategoryNoFound/CategoryNoFound";
 
 const PostSection = () => {
   const [postData, setPostData] = useState([]);
@@ -98,7 +99,7 @@ const PostSection = () => {
             />
           ))
         ) : (
-          <h1>Category no found</h1>
+          <CategoryNoFound />
         )}
       </section>
       <Newsletter />

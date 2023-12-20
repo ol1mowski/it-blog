@@ -44,12 +44,10 @@
         }
       }
       &__category {
-        color: $text-blue-color;
+        color: $blue-color;
         font-size: 1rem;
         font-weight: bold;
         cursor: pointer;
-        will-change: scale;
-        transition: scale 0.7s;
       }
 
       &__title {
@@ -61,7 +59,7 @@
       }
 
       &__read {
-        color: $text-blue-color;
+        color: $blue-color;
         font-size: 1rem;
         font-weight: bold;
         margin-top: 1rem;
@@ -69,7 +67,7 @@
         will-change: scale;
         transition: scale 0.7s;
       }
-      &__category:hover, &__read:hover {
+      &__read:hover {
         scale: 1.1;
       }
     }

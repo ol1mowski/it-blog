@@ -1,3 +1,4 @@
+import Error from '../../Components/UI/Error/Error';
 import Loading from '../../Components/UI/Loading/Loading';
 import { fetchCategory } from '../../util/http';
 import Category from './Category/Category';
@@ -6,7 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const CategorySection = () => {
 
-    const { data, status } = useQuery({
+    const { data, status, error } = useQuery({
         queryKey: ['categories'],
         queryFn: fetchCategory,
     });
@@ -33,9 +34,7 @@ const CategorySection = () => {
 if (status === 'error') {
     <section className={s.categoryContainer}>
             <div className={s.categoryContainer__wrapper}>
-               <h1>
-                Error
-               </h1>
+               <Error message={error.message}/>
             </div>
         </section>
 }
