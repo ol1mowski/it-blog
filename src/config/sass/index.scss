@@ -15,7 +15,7 @@ $nav-color: #fff;
 $box-shadow: 0 0.275rem 0.75rem -0.0625rem rgba(11, 15, 25, 0.06),
   0 0.125rem 0.4rem -0.0625rem rgba(11, 15, 25, 0.03);
 
-$box-shadow-category: 1px 1px 1px 1px $text-blue-color;
+$box-shadow-category: 1px 1px 1px 1px $blue-color;
 
 //mixins
 
@@ -31,14 +31,14 @@ $box-shadow-category: 1px 1px 1px 1px $text-blue-color;
 }
 
 @mixin header() {
-  color: $text-dark-color;
+  color: $dark-color;
   font-size: 1.7rem;
   font-weight: bold;
 }
 
 @mixin below-headers() {
   text-align: center;
-  color: $text-dark-color;
+  color: $dark-color;
   font-size: 1.5rem;
   line-height: 1.4;
   margin-top: 1rem;
@@ -70,7 +70,7 @@ $box-shadow-category: 1px 1px 1px 1px $text-blue-color;
 @mixin btn() {
   border-radius: 0.5rem;
   border: none;
-  background-color: $text-blue-color;
+  background-color: $blue-color;
   color: #fff;
   padding: 0.6rem;
   transition: scale 0.7s;

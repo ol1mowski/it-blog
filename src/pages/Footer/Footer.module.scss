@@ -3,7 +3,7 @@
 .footerContainer {
   font-family: "Arial";
   margin-top: 15rem;
-  background-color: #2d2e2d;
+  background-color: $dark-color;
   @include d-flex-column;
   padding: 2rem;
   gap: 3rem;
@@ -32,7 +32,7 @@
         @include d-flex;
         gap: 1rem;
         &__h3 {
-          color: #fff;
+          color: $white-color;
           font-size: 1.5rem;
           @media screen and (min-width: $mobile) {
             font-size: 1.7rem;
@@ -62,7 +62,7 @@
       @include d-flex-column;
       gap: 2rem;
       align-items: flex-start;
-      color: #fff;
+      color: $white-color;
       &__nav {
         margin-left: 2rem;
 
@@ -89,7 +89,7 @@
           }
           &__item:hover {
             scale: 1.1;
-            color: $text-blue-color;
+            color: $blue-color;
           }
         }
       }
@@ -112,7 +112,7 @@
   &__signature {
     &__h4 {
       font-size: 0.8rem;
-      color: #fff;
+      color: $white-color;
     }
   }
 }
@@ -131,10 +131,10 @@
 
 #yt:hover {
   scale: 1.1;
-  color: $text-red-color;
+  color: $red-color;
 }
 
 #contact:hover {
   scale: 1.1;
-  color: $text-blue-color;
+  color: $blue-color;
 }

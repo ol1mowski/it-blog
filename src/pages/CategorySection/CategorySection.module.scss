@@ -14,7 +14,7 @@
     &__wrapper {
         @include d-flex-column;
         gap: 2rem;
-        background-color: #fff;
+        background-color: $white-color;
         box-shadow: $box-shadow;
         border-radius: .7rem;
         padding: 2rem;
@@ -28,7 +28,7 @@
 
             &__content {
                 font-size: 2rem;
-                color: $text-dark-color;
+                color: $dark-color;
 
                 @media screen and (min-width: 1024px) {
                     font-size: 1.5rem;
@@ -61,7 +61,7 @@
         }
 
         &__item_active {
-            border: 2px solid $text-blue-color;
+            border: 2px solid $blue-color;
         }
 
         &__item:hover {
