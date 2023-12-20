@@ -28,7 +28,7 @@ const Newsletter = () => {
       } else {
         setIsValidate(false);
         if (newsEmail.indexOf("@") === -1) {
-          setErrorInfo("Syntax error in email address");
+          setErrorInfo("Your email address must include a @");
         } else if (newsEmail.length < 8) {
           setErrorInfo("Email must be at least 8 characters long");
         }
