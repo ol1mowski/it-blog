@@ -70,14 +70,14 @@
     }
 
     &__category {
-      color: $text-blue-color;
+      color: $blue-color;
       font-size: 1rem;
       font-weight: bold;
       cursor: pointer;
     }
 
     &__title {
-      color: $text-dark-color;
+      color: $dark-color;
       font-size: 2rem;
       font-weight: bold;
     }
@@ -87,7 +87,7 @@
     }
 
     &__read {
-      color: $text-blue-color;
+      color: $blue-color;
       font-size: 1rem;
       font-weight: bold;
       will-change: scale;
@@ -118,13 +118,13 @@
       border-radius: 100%;
       width: .5rem;
       height: .5rem;
-      border: 1px solid $text-blue-color;
+      border: 1px solid $blue-color;
       transition: all 1s;
       will-change: backgroundColor;
     }
 
     &__dot__active {
-      background-color: $text-blue-color;
+      background-color: $blue-color;
     }
   }
 }

@@ -47,15 +47,15 @@
           border-radius: 0 .7rem .7rem 0;
           padding: .93rem 1rem;
           cursor: pointer;
-          background-color: #2d2e2d;
+          background-color: $dark-color;
         }
         &__inp {
           @include inp;
           border-radius: .7rem 0 0 .7rem;
-          background-color: #2d2e2d;
+          background-color: $dark-color;
           border: none;
           padding: 1.1rem 1rem;
-          color: #fff;
+          color: $white-color;
         }
       }
       &__imgReact {
@@ -147,16 +147,16 @@
         border-radius: 0 .7rem .7rem 0;
         padding: .93rem 1rem;
         cursor: pointer;
-        background-color: #2d2e2d;
+        background-color: $dark-color;
 
       }
       &__inp {
         @include inp;
         border-radius: .7rem 0 0 .7rem;
-        background-color: #2d2e2d;
+        background-color: $dark-color;
         border: none;
         padding: 1.1rem 7rem;
-        color: #fff;
+        color: $white-color;
       }
 
     }
