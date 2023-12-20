@@ -1,0 +1,10 @@
+@import "../../../config/sass/index.scss";
+
+.errorContainer {
+    @include d-flex-column;
+    background-color: #F8D7D9;
+    width: 50vw;
+    height: 20vh;
+    color: #650a0a;
+    border-radius: .7rem;
+}

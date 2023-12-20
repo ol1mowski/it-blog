@@ -1,5 +1,5 @@
 import s from "../PostsStyle/PostSection.module.scss";
-import Loading from '../../../Components/UI/Loading';
+import Loading from '../../../Components/UI/Loading/Loading';
 
 
 const Post = ({title, category, description, image, isLoading}) => {

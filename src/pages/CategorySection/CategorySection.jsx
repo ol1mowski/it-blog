@@ -1,4 +1,4 @@
-import Loading from '../../Components/UI/Loading';
+import Loading from '../../Components/UI/Loading/Loading';
 import { fetchCategory } from '../../util/http';
 import Category from './Category/Category';
 import s from './CategorySection.module.scss';

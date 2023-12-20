@@ -6,6 +6,8 @@ import { useContext, useEffect, useState } from "react";
 import { fetchPosts } from "../../../util/http";
 import SearchCategoryContext from "../../../Context/SearchCategoryContext";
 import Newsletter from "../Newsletter/Newsletter";
+import Loading from "../../../Components/UI/Loading/Loading";
+import Error from "../../../Components/UI/Error/Error";
 
 const PostSection = () => {
   const [postData, setPostData] = useState([]);
@@ -16,7 +18,7 @@ const PostSection = () => {
 
   const [found, setFound] = useState(true);
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isError, error } = useQuery({
     queryKey: ["posts"],
     queryFnL: fetchPosts,
   });
@@ -80,7 +82,11 @@ const PostSection = () => {
   return (
     <main id="posts" className={s.postsContainer}>
       <section className={s.postsContainer__postsWrapper}>
-        {found === true ? (
+        {isError ? (
+          <Error message={error.message} />
+        ) : isLoading ? (
+          <Loading />
+        ) : found ? (
           postData.map((item) => (
             <Post
               isLoading={isLoading}
