@@ -73,8 +73,6 @@
       color: $text-blue-color;
       font-size: 1rem;
       font-weight: bold;
-      will-change: scale;
-      transition: scale 0.7s;
       cursor: pointer;
     }
 
@@ -100,7 +98,7 @@
         margin-top: 1rem;
       }
     }
-    &__category:hover, &__read:hover {
+    &__read:hover {
       scale: 1.1;
     }
   }

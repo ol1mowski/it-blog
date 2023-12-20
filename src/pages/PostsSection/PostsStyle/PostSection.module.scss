@@ -48,8 +48,6 @@
         font-size: 1rem;
         font-weight: bold;
         cursor: pointer;
-        will-change: scale;
-        transition: scale 0.7s;
       }
 
       &__title {
@@ -69,7 +67,7 @@
         will-change: scale;
         transition: scale 0.7s;
       }
-      &__category:hover, &__read:hover {
+      &__read:hover {
         scale: 1.1;
       }
     }

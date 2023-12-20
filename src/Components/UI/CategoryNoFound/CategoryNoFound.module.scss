@@ -1,0 +1,10 @@
+@import '../../../config/sass/index.scss';
+
+.container {
+    padding: 2rem 5rem;
+    background-color: #FFF3CD;
+    border-radius: .7rem;
+    @include d-flex-column;
+    gap: 1rem;
+    color: $text-dark-color;
+}
