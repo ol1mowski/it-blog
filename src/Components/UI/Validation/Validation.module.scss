@@ -1,0 +1,14 @@
+@import '../../../config/sass/index.scss';
+
+.pass, .fail {
+    text-align: left;
+    width: 100%;
+}
+
+.pass {
+    color: $text-green-color;
+}
+
+.fail {
+    color: $text-red-color;
+}

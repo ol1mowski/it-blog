@@ -2,6 +2,7 @@ import s from "./Newsletter.module.scss";
 
 import img from "../../../assets/technology.jpg";
 import { useEffect, useRef, useState } from "react";
+import Validation from "../../../Components/UI/Validation/Validation";
 
 const Newsletter = () => {
   const newsInp = useRef(null);
@@ -87,8 +88,8 @@ const Newsletter = () => {
               sign up
             </button>
           </div>
-          {errorInfo ? <p>{errorInfo}</p> : null}
-          {isValidate ? <p>Your email has been added to Newsletter!</p> : null}
+          {errorInfo ? <Validation message={errorInfo} resoult={'fail'}/> : null}
+          {isValidate ? <Validation message={'Your email has been added to Newsletter!'} resoult={'pass'}/> : null}
 
           <div
             className={
