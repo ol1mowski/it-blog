@@ -6,12 +6,12 @@
 
   &__wrapper {
     @include d-flex-column;
-    box-shadow: 0 0.175rem 0.45rem -0.0225rem $text-blue-color;
+    box-shadow: 0 0.175rem 0.45rem -0.0225rem $blue-color;
     width: 90vw;
     padding: 2rem;
     margin: 0 auto;
     gap: 2rem;
-    border-radius: .7rem;
+    border-radius: 0.7rem;
 
     @media screen and (min-width: $mobile) {
       padding: 3rem;
@@ -108,7 +108,7 @@
         justify-content: flex-start;
         font-size: 0.9rem;
         padding-left: 5vw;
-        color: $text-dark-color;
+        color: $dark-color;
         text-align: left;
         width: 100%;
 
@@ -128,25 +128,25 @@
 }
 
 .valid {
-  border: 2px solid #5cb85c;
+  border: 2px solid $green-color;
 }
 
 .unvalid {
-  border: 1px solid $text-red-color;
-animation: unvalidAnimation .3s linear;
+  border: 1px solid $red-color;
+  animation: unvalidAnimation 0.3s linear;
 }
 
 @keyframes unvalidAnimation {
-    0% {
-      transform: translateX(.5vw);
-    }
-    50% {
-      transform: translateX(-.5vw);
-    }
-    75% {
-      transform: translateX(.5vw);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0.5vw);
+  }
+  50% {
+    transform: translateX(-0.5vw);
+  }
+  75% {
+    transform: translateX(0.5vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
