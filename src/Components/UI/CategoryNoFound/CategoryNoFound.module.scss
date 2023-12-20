@@ -2,9 +2,9 @@
 
 .container {
     padding: 2rem 5rem;
-    background-color: #FFF3CD;
+    background-color: $category-no-found-color;
     border-radius: .7rem;
     @include d-flex-column;
     gap: 1rem;
-    color: $text-dark-color;
+    color: $dark-color;
 }
