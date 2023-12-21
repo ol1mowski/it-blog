@@ -6,7 +6,7 @@ import SearchCategoryContext from "./Context/SearchCategoryContext";
 import HomePage from "./pages/HomePage/HomePage";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Header from "./pages/Home/Header/Header";
-import ReadMore from "./pages/ReadMore/ReadMore";
+import ReadMore, { readMoreLoader } from "./pages/ReadMore/ReadMore";
 
 function App() {
   const [currentCategory, setCurrentCategory] = useState(1);
@@ -18,7 +18,7 @@ function App() {
       element: <Header />,
       children: [
         { path: "/", element: <HomePage /> },
-        { path: "/:id", element: <ReadMore /> },
+        { path: "/:id", element: <ReadMore />, loader: readMoreLoader },
       ],
     },
   ]);
