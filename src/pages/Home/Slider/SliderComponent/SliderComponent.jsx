@@ -1,5 +1,6 @@
 import { memo, useEffect, useRef, useState } from "react";
 import s from "../Slider.module.scss";
+import { Link } from "react-router-dom";
 
 const SliderComponent = memo(({ data }) => {
   const slide1 = useRef(null);
@@ -90,7 +91,8 @@ const SliderComponent = memo(({ data }) => {
           <p className={s.sliderContainer__content__category}>{category}</p>
           <h2 className={s.sliderContainer__content__title}>{title}</h2>
           <h3 className={s.sliderContainer__content__text}>{description}</h3>
-          <p className={s.sliderContainer__content__read}>Read more</p>
+          <Link to={`/${category}`}>
+             <p className={s.sliderContainer__content__read}>Read more</p></Link>
         </div>
       </main>
       <section className={s.sliderContainer__sliderDots}>
