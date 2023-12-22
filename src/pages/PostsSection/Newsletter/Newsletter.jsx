@@ -6,43 +6,34 @@ import Validation from "../../../Components/UI/Validation/Validation";
 
 const Newsletter = () => {
   const newsInp = useRef(null);
-  const newsBtn = useRef(null);
 
   const [isValidate, setIsValidate] = useState(false);
   const [errorInfo, setErrorInfo] = useState("");
 
-  useEffect(() => {
-    const validateEmail = (email) => {
-      return email.length >= 8 && email.includes("@");
-    };
-  
-    const handleValidInput = () => {
-      const newsEmail = newsInp.current.value;
-  
-      if (validateEmail(newsEmail)) {
-        setIsValidate(true);
-        setErrorInfo("");
-        newsInp.current.classList.remove(s.unvalid);
-        newsInp.current.value = "";
-        newsInp.current.classList.add(s.valid);
-      } else {
-        setIsValidate(false);
-        if (newsEmail.indexOf("@") === -1) {
-          setErrorInfo("Your email address must include a @");
-        } else if (newsEmail.length < 8) {
-          setErrorInfo("Email must be at least 8 characters long");
-        }
-        newsInp.current.classList.add(s.unvalid);
+  const validateEmail = (email) => {
+    return email.length >= 8 && email.includes("@");
+  };
+
+  const validInputHandler = () => {
+    const newsEmail = newsInp.current.value;
+
+    if (validateEmail(newsEmail)) {
+      setIsValidate(true);
+      setErrorInfo("");
+      newsInp.current.classList.remove(s.unvalid);
+      newsInp.current.value = "";
+      newsInp.current.classList.add(s.valid);
+    } else {
+      setIsValidate(false);
+      if (newsEmail.indexOf("@") === -1) {
+        setErrorInfo("Your email address must include a @");
+      } else if (newsEmail.length < 8) {
+        setErrorInfo("Email must be at least 8 characters long");
       }
-    };
-  
-    newsBtn.current.addEventListener("click", handleValidInput);
-  
-    return () => {
-      newsBtn.current.removeEventListener("click", handleValidInput);
-    };
-  }, [newsBtn]);
-  
+      newsInp.current.classList.add(s.unvalid);
+    }
+    zs;
+  };
 
   return (
     <section className={s.newsletterContainer}>
@@ -80,7 +71,7 @@ const Newsletter = () => {
               placeholder="Enter your email"
             />
             <button
-              ref={newsBtn}
+              onClick={validInputHandler}
               className={
                 s.newsletterContainer__wrapper__inputSection__inpWrapper__btn
               }
@@ -88,8 +79,15 @@ const Newsletter = () => {
               sign up
             </button>
           </div>
-          {errorInfo ? <Validation message={errorInfo} resoult={'fail'}/> : null}
-          {isValidate ? <Validation message={'Your email has been added to Newsletter!'} resoult={'pass'}/> : null}
+          {errorInfo ? (
+            <Validation message={errorInfo} resoult={"fail"} />
+          ) : null}
+          {isValidate ? (
+            <Validation
+              message={"Your email has been added to Newsletter!"}
+              resoult={"pass"}
+            />
+          ) : null}
 
           <div
             className={
