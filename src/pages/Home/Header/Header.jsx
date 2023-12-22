@@ -9,7 +9,6 @@ const Header = () => {
 
   const showHamburgerMenu = useRef(null);
 
-  const searchIcon = useRef(null);
 
   return (
     <>
@@ -35,14 +34,6 @@ const Header = () => {
               <li className={s.header__navMenu__items__item}>About Author</li>
             </ul>
           </div>
-          <img
-            ref={searchIcon}
-            className={s.header__navMenu__search}
-            width="20"
-            height="20"
-            src="https://img.icons8.com/ios/50/000000/search--v1.png"
-            alt="search--v1"
-          />
         </section>
         <section ref={showHamburgerMenu} className={s.header__hamburgerSection}>
           <img
@@ -57,7 +48,7 @@ const Header = () => {
 
         <HamburgerMenu showHamburgerMenu={showHamburgerMenu} />
 
-        <SearchSetion searchIcon={searchIcon} />
+        <SearchSetion />
       </header>
       <Outlet />
     </>
