@@ -39,12 +39,7 @@ const ReadMore = () => {
           </div>
         </div>
         <h1 className={s.container__content__title}>{title}</h1>
-        <h3 className={s.container__content__description}>
-          Unlock the power of React in 2023! 🚀 Whether you're a beginner or
-          leveling up, this guide will walk you through the essentials. From
-          mastering JSX to building dynamic UIs, embark on your React journey
-          today! 💡💻 #LearnReact #WebDevelopment #CodingGuide
-        </h3>
+        <h3 className={s.container__content__description}>{description}</h3>
 
         <div className={s.container__content__authorContainer}>
           <div className={s.container__content__authorContainer__img}>
