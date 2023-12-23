@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { useRef } from "react";
-import { useEffect } from "react";
 
 import search from "../../../../assets/search.svg";
 
@@ -12,7 +11,6 @@ const SearchSetion = () => {
 
   const searchSection = useRef(null);
 
-  const searchButton = useRef(null);
   const searchCategoryInput = useRef(null);
 
   const showSearchSectionHandler = () => {
