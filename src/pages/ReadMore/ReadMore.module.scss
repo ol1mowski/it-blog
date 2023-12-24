@@ -17,7 +17,7 @@
   &__image {
     width: 80vw;
     @media screen and (min-width: $tablet) {
-      width: 30rem;
+      width: 20rem;
       margin: 0 auto;
     }
     &__img {
@@ -36,6 +36,10 @@
       width: 100%;
       gap: 1rem;
       justify-content: flex-start;
+      padding: 1rem;
+      @media screen and (min-width: $big-tablets) {
+        justify-content: center;
+      }
       &__tag {
         background-color: $blue-color;
         padding: 0.7rem 1rem;
@@ -52,6 +56,12 @@
       @media screen and (min-width: $mobile) {
         padding-right: 5rem;
       }
+      @media screen and (min-width: $big-tablets) {
+        width: 80%;
+        margin: 0 auto;
+        padding-right: 0;
+        text-align: center;
+      }
       &__title {
         width: 100%;
         font-size: 2rem;
@@ -60,6 +70,9 @@
         font-size: 1.3rem;
         font-weight: 200;
         border-radius: 0.7rem;
+        @media screen and (min-width: $big-tablets) {
+          width: 80%;
+        }
       }
     }
     &__authorContainer {
@@ -67,6 +80,9 @@
       gap: 1rem;
       width: 100%;
       justify-content: flex-start;
+      @media screen and (min-width: $big-tablets) {
+        justify-content: center;
+      }
       &__img {
         width: 4.5rem;
         height: 4.5rem;
