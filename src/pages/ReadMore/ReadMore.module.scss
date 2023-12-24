@@ -15,11 +15,15 @@
   }
 
   &__image {
-    width: 100%;
+    width: 80vw;
+    @media screen and (min-width: $tablet) {
+      width: 30rem;
+      margin: 0 auto;
+    }
     &__img {
       height: 100%;
       width: 100%;
-      border-radius: .7rem;
+      border-radius: 0.7rem;
       box-shadow: $box-shadow;
     }
   }
@@ -40,13 +44,23 @@
         font-size: 1.1rem;
       }
     }
-    &__title {
-      font-size: 2rem;
-    }
-    &__description {
-      font-size: 1.3rem;
-      font-weight: 200;
-      border-radius: .7rem; 
+
+    &__postWrapper {
+      @include d-flex-column;
+      gap: 1rem;
+      justify-content: flex-start;
+      @media screen and (min-width: $mobile) {
+        padding-right: 5rem;
+      }
+      &__title {
+        width: 100%;
+        font-size: 2rem;
+      }
+      &__description {
+        font-size: 1.3rem;
+        font-weight: 200;
+        border-radius: 0.7rem;
+      }
     }
     &__authorContainer {
       @include d-flex;
@@ -71,7 +85,7 @@ a {
   color: $dark-color;
   text-decoration: none;
   cursor: pointer;
-  transition: color, scale .7s;
+  transition: color, scale 0.7s;
   will-change: scale, color;
 }
 

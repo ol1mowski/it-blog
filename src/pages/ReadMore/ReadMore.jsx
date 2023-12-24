@@ -38,8 +38,11 @@ const ReadMore = () => {
             <span>{date}</span>
           </div>
         </div>
-        <h1 className={s.container__content__title}>{title}</h1>
-        <h3 className={s.container__content__description}>{description}</h3>
+
+        <div className={s.container__content__postWrapper}>
+          <h1 className={s.container__content__postWrapper__title}>{title}</h1>
+          <h3 className={s.container__content__postWrapper__description}>{description}</h3>
+        </div>
 
         <div className={s.container__content__authorContainer}>
           <div className={s.container__content__authorContainer__img}>
