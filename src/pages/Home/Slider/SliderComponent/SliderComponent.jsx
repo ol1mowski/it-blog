@@ -25,7 +25,9 @@ const SliderComponent = memo(({ data }) => {
     const detachEventListeners = () => {
       slidesRefs.forEach((slide, index) => {
         const changeSlideHandler = () => handleSlideChange(index);
-        slide.current.removeEventListener("click", changeSlideHandler);
+        if (slide.current) {
+          slide.current.removeEventListener("click", changeSlideHandler);
+        }
       });
     };
 
@@ -39,9 +41,11 @@ const SliderComponent = memo(({ data }) => {
   useEffect(() => {
     const intervalId = setInterval(changeSlide, 5000);
 
-    return () => clearInterval(intervalId);
+    return () => {
+      clearInterval(intervalId);
+    };
   }, [index, data]);
-
+  
   const renderImage = () => (
     <img
       src={data[index].image}

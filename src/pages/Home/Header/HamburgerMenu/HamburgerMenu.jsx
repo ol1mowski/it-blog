@@ -14,17 +14,27 @@ const HamburgerMenu = ({ showHamburgerMenu }) => {
   const hamburgerMenu = useRef(null);
   
   useEffect(() => {
+  
     const showMenuHandler = () => {
-      hamburgerMenu.current.style.display = "block";
+      if (hamburgerMenu.current) {
+        hamburgerMenu.current.style.display = "block";
+      }
     };
-
-    showHamburgerMenu.current.addEventListener("click", showMenuHandler);
-
+  
+    const currentRef = showHamburgerMenu.current;
+  
+    if (currentRef) {
+      currentRef.addEventListener("click", showMenuHandler);
+    }
+  
     return () => {
-      showHamburgerMenu.current.removeEventListener("click", showMenuHandler);
+      if (currentRef) {
+        currentRef.removeEventListener("click", showMenuHandler);
+      }
     };
   }, [showHamburgerMenu]);
-
+  
+  
   const hideMenuHandler = () => {
     hamburgerMenu.current.style.display = "none";
   };
@@ -49,7 +59,7 @@ const HamburgerMenu = ({ showHamburgerMenu }) => {
   };
 
   return (
-    <menu  className={s.header__hamburgerMenu}>
+    <menu ref={hamburgerMenu} className={s.header__hamburgerMenu}>
       <section
         onClick={hideMenuHandler}
         className={s.header__hamburgerMenu__close}
