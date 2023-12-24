@@ -12,23 +12,23 @@ const ReadMore = () => {
     (item) => item.category === id
   )[0];
 
-  const style = {
-    boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset",
-    background: `url(${image}) lightgray 50% / cover no-repeat`,
-  };
-
   return (
-    <section style={style} className={s.container}>
+    <section className={s.container}>
       <div className={s.container__navigation}>
         <Link to={"/"}>Home</Link>
         <img
           width="20"
           height="20"
-          src="https://img.icons8.com/material-outlined/20/FFFFFF/double-right.png"
+          src="https://img.icons8.com/material-rounded/20/000000/double-right.png"
           alt="double-right"
-        />{" "}
+        />
         {id}
       </div>
+
+      <div className={s.container__image}>
+        <img className={s.container__image__img} src={image} alt="post image" />
+      </div>
+
       <div className={s.container__content}>
         <div className={s.container__content__tagsWrapper}>
           <div className={s.container__content__tagsWrapper__tag}>

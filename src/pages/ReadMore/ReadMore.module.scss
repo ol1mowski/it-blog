@@ -4,16 +4,24 @@
   @include d-flex-column;
   width: 100vw;
   padding: 2rem;
-  color: $white-color;
+  color: $dark-color;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 6rem;
+  gap: 2rem;
   &__navigation {
     @include d-flex;
     gap: 0.5rem;
-    background-color: $dark-color;
-    padding: 1rem;
-    border-radius: .7rem; 
+    font-size: 1.2rem;
+  }
+
+  &__image {
+    width: 100%;
+    &__img {
+      height: 100%;
+      width: 100%;
+      border-radius: .7rem;
+      box-shadow: $box-shadow;
+    }
   }
 
   &__content {
@@ -27,21 +35,17 @@
       &__tag {
         background-color: $blue-color;
         padding: 0.7rem 1rem;
+        color: $white-color;
         border-radius: 0.4rem;
         font-size: 1.1rem;
       }
     }
     &__title {
-      background-color: $dark-color;
-      padding: 1rem;
-      border-radius: .7rem; 
       font-size: 2rem;
     }
     &__description {
       font-size: 1.3rem;
       font-weight: 200;
-      background-color: $dark-color;
-      padding: 1rem;
       border-radius: .7rem; 
     }
     &__authorContainer {
@@ -50,7 +54,6 @@
       width: 100%;
       justify-content: flex-start;
       &__img {
-        background-color: $white-color;
         width: 4.5rem;
         height: 4.5rem;
         @include d-flex;
@@ -65,6 +68,14 @@
 }
 
 a {
-  color: $white-color;
+  color: $dark-color;
   text-decoration: none;
+  cursor: pointer;
+  transition: color, scale .7s;
+  will-change: scale, color;
+}
+
+a:hover {
+  color: $blue-color;
+  scale: 1.1;
 }
