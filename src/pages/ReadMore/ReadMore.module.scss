@@ -16,9 +16,9 @@
 
   &__image {
     width: 80vw;
-    @media screen and (min-width: $tablet) {
-      width: 20rem;
-      margin: 0 auto;
+    margin: 0 auto;
+    @media screen and (min-width: $big-tablets) {
+      width: 40rem;
     }
     &__img {
       height: 100%;
@@ -31,6 +31,9 @@
   &__content {
     @include d-flex-column;
     gap: 3rem;
+    @media screen and (min-width: $big-tablets) {
+      padding-left: 6rem;
+    }
     &__tagsWrapper {
       @include d-flex;
       width: 100%;
@@ -38,7 +41,7 @@
       justify-content: flex-start;
       padding: 1rem;
       @media screen and (min-width: $big-tablets) {
-        justify-content: center;
+        padding: 0;
       }
       &__tag {
         background-color: $blue-color;
@@ -55,12 +58,6 @@
       justify-content: flex-start;
       @media screen and (min-width: $mobile) {
         padding-right: 5rem;
-      }
-      @media screen and (min-width: $big-tablets) {
-        width: 80%;
-        margin: 0 auto;
-        padding-right: 0;
-        text-align: center;
       }
       &__title {
         width: 100%;
