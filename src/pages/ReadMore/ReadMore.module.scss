@@ -5,20 +5,23 @@
   width: 100vw;
   padding: 2rem;
   color: $dark-color;
-  justify-content: flex-start;
-  align-items: flex-start;
   gap: 2rem;
   &__navigation {
     @include d-flex;
+    justify-content: flex-start;
+    width: 100%;
     gap: 0.5rem;
     font-size: 1.2rem;
   }
 
   &__image {
-    width: 90vw;
-    height: 25vh;
+    width: 80vw;
     margin: 0 auto;
     filter: grayscale(40%);
+    margin-top: 5vh;
+    @media screen and (min-width: $tablet) {
+      width: 35rem;
+    }
     &__img {
       height: 100%;
       width: 100%;
@@ -31,13 +34,12 @@
     @include d-flex-column;
     gap: 3rem;
     @media screen and (min-width: $big-tablets) {
-      padding-left: 6rem;
+      padding-left: 2rem;
     }
     &__tagsWrapper {
       @include d-flex;
       width: 100%;
       gap: 1rem;
-      justify-content: flex-start;
       padding: 1rem;
       @media screen and (min-width: $big-tablets) {
         padding: 0;
@@ -54,9 +56,11 @@
     &__postWrapper {
       @include d-flex-column;
       gap: 1rem;
-      justify-content: flex-start;
       @media screen and (min-width: $mobile) {
-        padding-right: 5rem;
+        width: 90%;
+      }
+      @media screen and (min-width: $big-tablets) {
+        width: 70%;
       }
       &__title {
         width: 100%;
@@ -66,9 +70,6 @@
         font-size: 1.3rem;
         font-weight: 200;
         border-radius: 0.7rem;
-        @media screen and (min-width: $big-tablets) {
-          width: 80%;
-        }
       }
     }
     &__authorContainer {
@@ -77,7 +78,7 @@
       width: 100%;
       justify-content: flex-start;
       @media screen and (min-width: $big-tablets) {
-        justify-content: center;
+        width: 70%;
       }
       &__img {
         width: 4.5rem;
