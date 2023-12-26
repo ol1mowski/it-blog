@@ -12,6 +12,12 @@
     width: 100%;
     gap: 0.5rem;
     font-size: 1.2rem;
+    @media screen and (min-width: $big-tablets) {
+      margin-left: 10rem;
+    }
+    &__homeBack {
+      color: $blue-color;
+    }
   }
 
   &__image {
@@ -35,6 +41,9 @@
     gap: 3rem;
     @media screen and (min-width: $big-tablets) {
       padding-left: 2rem;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 60rem;
     }
     &__tagsWrapper {
       @include d-flex;

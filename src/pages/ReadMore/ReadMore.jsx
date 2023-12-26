@@ -15,7 +15,7 @@ const ReadMore = () => {
   return (
     <section className={s.container}>
       <div className={s.container__navigation}>
-        <Link to={"/"}>Home</Link>
+        <Link className={s.container__navigation__homeBack} to={"/"}>Home</Link>
         <img
           width="20"
           height="20"
