@@ -15,11 +15,10 @@
   }
 
   &__image {
-    width: 80vw;
+    width: 90vw;
+    height: 25vh;
     margin: 0 auto;
-    @media screen and (min-width: $big-tablets) {
-      width: 40rem;
-    }
+    filter: grayscale(40%);
     &__img {
       height: 100%;
       width: 100%;
