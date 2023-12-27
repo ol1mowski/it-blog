@@ -7,6 +7,8 @@ const Category = ({ name, image, id }) => {
   const { setCurrentCategory } = useContext(CategoryContext);
 
   const itemClickHandler = () => {
+    const postsElement = document.getElementById("posts");
+    postsElement.scrollIntoView({ behavior: "smooth" });
     const prevItem = document.querySelector(
       `.${s.categoryContainer__wrapper__item_active}`
     );
