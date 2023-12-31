@@ -15,17 +15,16 @@ const CategoryNoFound = () => {
 
   const CATEGORY = data || [];
 
-  const category_available = CATEGORY.map((category) => category.name);
 
-  console.log(category_available);
+  console.log(data);
 
   return (
     <div className={s.container}>
       <h1 className={s.container__header}>[-] Category no found</h1>
       <div className={s.container__categoryContainer}>
         <h2 className={s.container__header}>Available: </h2>
-        {category_available.map((category) => (
-          <CategoryNoFoundComponent category={category} />
+        {CATEGORY.map((category) => (
+          <CategoryNoFoundComponent key={category.id} category={category.name} id={category.id}/>
         ))}
       </div>
     </div>
