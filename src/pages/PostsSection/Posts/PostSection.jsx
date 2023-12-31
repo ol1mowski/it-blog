@@ -53,7 +53,6 @@ const PostSection = () => {
   }, [searchCategory]);
 
   useEffect(() => {
-    console.log(currentCategory);
     if (data) {
       switch (+currentCategory) {
         case 1:
