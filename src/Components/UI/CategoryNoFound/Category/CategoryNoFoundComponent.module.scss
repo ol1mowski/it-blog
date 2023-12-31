@@ -1,0 +1,9 @@
+@import '../../../../config/sass/index.scss';
+
+.categoryWrapper {
+    @include d-flex;
+    text-decoration: underline;
+    color: $blue-color;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
