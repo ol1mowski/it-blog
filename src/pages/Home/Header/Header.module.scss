@@ -15,7 +15,7 @@
   }
 
   @media screen and (min-width: $big-tablets) {
-    padding-left: 7rem;
+    padding: 1rem 7rem;
   }
 
   &__hamburgerMenu {
@@ -94,6 +94,10 @@
     &__search {
       @include items-will-hover;
       cursor: pointer;
+      display: none;
+      @media screen and (min-width: $tablet) {
+        display: flex;
+      }
     }
     &__search:hover {
       @include items-hover-effect;

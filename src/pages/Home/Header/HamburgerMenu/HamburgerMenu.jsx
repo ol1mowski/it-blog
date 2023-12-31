@@ -3,41 +3,41 @@ import { useEffect } from "react";
 
 import s from "../Header.module.scss";
 import SearchCategoryContext from "../../../../Context/SearchCategoryContext";
-import search from '../../../../assets/search.svg';
+import search from "../../../../assets/search.svg";
 
 const HamburgerMenu = ({ showHamburgerMenu }) => {
-  const closeHamburgerMenu = useRef(null);
 
   const { setSearchCategory } = useContext(SearchCategoryContext);
-
-  const searchButton = useRef(null);
 
   const searchCategoryInput = useRef(null);
 
   const hamburgerMenu = useRef(null);
+  
   useEffect(() => {
+  
     const showMenuHandler = () => {
-      hamburgerMenu.current.style.display = "block";
+      if (hamburgerMenu.current) {
+        hamburgerMenu.current.style.display = "block";
+      }
     };
-
-    showHamburgerMenu.current.addEventListener("click", showMenuHandler);
-
+  
+    const currentRef = showHamburgerMenu.current;
+  
+    if (currentRef) {
+      currentRef.addEventListener("click", showMenuHandler);
+    }
+  
     return () => {
-      showHamburgerMenu.current.removeEventListener("click", showMenuHandler);
+      if (currentRef) {
+        currentRef.removeEventListener("click", showMenuHandler);
+      }
     };
   }, [showHamburgerMenu]);
-
-  useEffect(() => {
-    const hideMenuHandler = () => {
-      hamburgerMenu.current.style.display = "none";
-    };
-
-    closeHamburgerMenu.current.addEventListener("click", hideMenuHandler);
-
-    return () => {
-      closeHamburgerMenu.current.removeEventListener("click", hideMenuHandler);
-    };
-  }, [closeHamburgerMenu]);
+  
+  
+  const hideMenuHandler = () => {
+    hamburgerMenu.current.style.display = "none";
+  };
 
   const categoryKeyHandler = (e) => {
     if (e.key === "Enter") {
@@ -49,28 +49,19 @@ const HamburgerMenu = ({ showHamburgerMenu }) => {
     }
   };
 
-
-  useEffect(() => {
-    const categoryClickHandler = (e) => {
-      const searchValue = searchCategoryInput.current.value;
-      setSearchCategory(searchValue);
-      e.target.value = "";
-      hamburgerMenu.current.style.display = "none";
-      const postsElement = document.getElementById('posts');
-      postsElement.scrollIntoView({ behavior: 'smooth' });
-    };
-
-    searchButton.current.addEventListener("click", categoryClickHandler);
-
-    return () => {
-      searchButton.current.removeEventListener("click", categoryClickHandler);
-    };
-  }, [searchButton]);
+  const categoryClickHandler = (e) => {
+    const searchValue = searchCategoryInput.current.value;
+    setSearchCategory(searchValue);
+    e.target.value = "";
+    hamburgerMenu.current.style.display = "none";
+    const postsElement = document.getElementById("posts");
+    postsElement.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <menu ref={hamburgerMenu} className={s.header__hamburgerMenu}>
       <section
-        ref={closeHamburgerMenu}
+        onClick={hideMenuHandler}
         className={s.header__hamburgerMenu__close}
       >
         <img
@@ -100,16 +91,16 @@ const HamburgerMenu = ({ showHamburgerMenu }) => {
           </li>
         </ul>
         <div className={s.header__hamburgerMenu__nav__search}>
-        <input
-          ref={searchCategoryInput}
-          onKeyDown={categoryKeyHandler}
-          placeholder="Enter category"
-          type="text"
-          name="search"
-          className={s.header__hamburgerMenu__nav__search__inp}
-        />
+          <input
+            ref={searchCategoryInput}
+            onKeyDown={categoryKeyHandler}
+            placeholder="Enter category"
+            type="text"
+            name="search"
+            className={s.header__hamburgerMenu__nav__search__inp}
+          />
           <button
-            ref={searchButton}
+            onClick={categoryClickHandler}
             className={s.header__hamburgerMenu__nav__search__btn}
           >
             <img width="20" height="20" src={search} alt="search--v1" />

@@ -4,35 +4,30 @@ import CategoryContext from "../../../Context/categoryContext";
 
 const Category = ({ name, image, id }) => {
   const item = useRef(null);
-  const { currentCategory, setCurrentCategory } = useContext(CategoryContext);
+  const { setCurrentCategory } = useContext(CategoryContext);
 
-  useEffect(() => {
-    const itemClickHandler = () => {
-      const prevItem = document.querySelector(
-        `.${s.categoryContainer__wrapper__item_active}`
-      );
-      if (prevItem) {
-        prevItem.classList.remove(
-          `${s.categoryContainer__wrapper__item_active}`
-        );
-      }
+  const itemClickHandler = () => {
+    const postsElement = document.getElementById("posts");
+    postsElement.scrollIntoView({ behavior: "smooth" });
+    const prevItem = document.querySelector(
+      `.${s.categoryContainer__wrapper__item_active}`
+    );
+    if (prevItem) {
+      prevItem.classList.remove(`${s.categoryContainer__wrapper__item_active}`);
+    }
 
-      const currentCategoryId = item.current.id;
-      setCurrentCategory(currentCategoryId);
-      item.current.classList.add(
-        `${s.categoryContainer__wrapper__item_active}`
-      );
-    };
-
-    item.current.addEventListener("click", itemClickHandler);
-
-    return () => {
-      item.current.removeEventListener("click", itemClickHandler);
-    };
-  }, [currentCategory, item, setCurrentCategory]);
+    const currentCategoryId = item.current.id;
+    setCurrentCategory(currentCategoryId);
+    item.current.classList.add(`${s.categoryContainer__wrapper__item_active}`);
+  };
 
   return (
-    <div ref={item} id={id} className={s.categoryContainer__wrapper__item}>
+    <div
+      ref={item}
+      onClick={itemClickHandler}
+      id={id}
+      className={s.categoryContainer__wrapper__item}
+    >
       <img
         className={s.categoryContainer__wrapper__item__img}
         width="50"

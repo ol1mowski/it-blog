@@ -22,7 +22,7 @@ const Slider = memo(() => {
   }
 
   if (status === "success" && data) {
-    const contentData = data;
+    const contentData = data.filter(item => item.id !== 'p4');
 
     return <SliderComponent data={contentData} />;
   }

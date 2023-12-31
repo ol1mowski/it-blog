@@ -46,6 +46,7 @@ const PostSection = () => {
         break;
       default:
         if (searchCategory !== "") {
+          setCurrentCategory(0);
           setFound(false);
         }
     }
@@ -87,7 +88,7 @@ const PostSection = () => {
           <Error message={error.message} />
         ) : isLoading ? (
           <Loading />
-        ) : found ? (
+        ) : found || currentCategory !== 0 ? (
           postData.map((item) => (
             <Post
               isLoading={isLoading}
