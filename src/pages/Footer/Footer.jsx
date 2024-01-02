@@ -1,6 +1,25 @@
 import s from "./Footer.module.scss";
 
+import { useSpring, animated, config } from "react-spring";
+import { Link } from "react-scroll";
+import { useEffect } from "react";
+
 const Footer = () => {
+  const [style, set] = useSpring(() => ({
+    transform: "translateY(0)",
+    config: config.molasses,
+  }));
+
+  const handleScroll = () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    set({ transform: `translateY(${scrollTop}px)` });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <footer className={s.footerContainer}>
       <section className={s.footerContainer__top}>
@@ -41,7 +60,20 @@ const Footer = () => {
                     s.footerContainer__navigation__wrapper__nav__items__item
                   }
                 >
-                  <a className={s.footerContainer__navigation__wrapper__nav__items__item__a} href="#home">Home page</a>
+                  <Link
+                    to="home"
+                    spy={true}
+                    smooth={true}
+                    offset={-200}
+                    duration={1000}
+                    className={
+                      s.footerContainer__navigation__wrapper__nav__items__item__a
+                    }
+                  >
+                    <animated.span style={style}>Home page</animated.span>
+                  </Link>
+          
+    
                 </li>
                 <li
                   className={
