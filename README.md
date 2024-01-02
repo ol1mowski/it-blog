@@ -46,7 +46,7 @@ Install it-blog with npm
 ## search feature
 <img width="1440" alt="Screenshot 2024-01-02 at 19 43 39" src="https://github.com/ol1mowski/it-blog/assets/101707516/2164b90e-7ffb-4826-9068-6b6993df41ba">
 
-## subpage with concret specific post
+## subpage with specific post
 
 <img width="1440" alt="Screenshot 2024-01-02 at 19 41 23" src="https://github.com/ol1mowski/it-blog/assets/101707516/5f187cbd-798e-4254-9890-011d59266791">
 
