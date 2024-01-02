@@ -81,6 +81,7 @@ const PostSection = () => {
       }
     }
   }, [currentCategory]);
+
   return (
     <main id="posts" className={s.postsContainer}>
       <section className={s.postsContainer__postsWrapper}>
@@ -93,6 +94,7 @@ const PostSection = () => {
             <Post
               isLoading={isLoading}
               key={item.id}
+              id={item.id}
               image={item.image}
               category={item.category}
               title={item.title}

@@ -58,7 +58,7 @@ const SliderComponent = memo(({ data }) => {
 
   return (
     <>
-      <main className={s.sliderContainer}>
+      <main id="home" className={s.sliderContainer}>
         <div className={s.sliderContainer__image}>
           {renderImage()}
         </div>
@@ -66,7 +66,7 @@ const SliderComponent = memo(({ data }) => {
           <p className={s.sliderContainer__content__category}>{data[index].category}</p>
           <h2 className={s.sliderContainer__content__title}>{data[index].title}</h2>
           <h3 className={s.sliderContainer__content__text}>{data[index].description}</h3>
-          <Link to={`/${data[index].category}`}>
+          <Link to={`/${data[index].id}`}>
             <p className={s.sliderContainer__content__read}>Read more</p>
           </Link>
         </div>

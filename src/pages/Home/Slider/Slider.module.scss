@@ -10,6 +10,7 @@
 }
 
 .sliderContainer {
+  scroll-margin: 20rem;
   width: 90vw;
   margin: 2rem auto;
   @include d-flex-column;
