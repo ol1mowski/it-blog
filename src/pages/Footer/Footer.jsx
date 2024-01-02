@@ -72,7 +72,6 @@ const Footer = () => {
                   >
                     <animated.span style={style}>Home page</animated.span>
                   </Link>
-          
     
                 </li>
                 <li
