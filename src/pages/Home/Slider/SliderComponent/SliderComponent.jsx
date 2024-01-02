@@ -58,7 +58,7 @@ const SliderComponent = memo(({ data }) => {
 
   return (
     <>
-      <main className={s.sliderContainer}>
+      <main id="home" className={s.sliderContainer}>
         <div className={s.sliderContainer__image}>
           {renderImage()}
         </div>

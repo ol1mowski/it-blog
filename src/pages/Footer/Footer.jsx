@@ -41,7 +41,7 @@ const Footer = () => {
                     s.footerContainer__navigation__wrapper__nav__items__item
                   }
                 >
-                  Home page
+                  <a className={s.footerContainer__navigation__wrapper__nav__items__item__a} href="#home">Home page</a>
                 </li>
                 <li
                   className={
@@ -88,7 +88,7 @@ const Footer = () => {
                 </p>
               </div>
               <div
-               id={s.contact}
+                id={s.contact}
                 className={
                   s.footerContainer__navigation__wrapper__sources__source
                 }

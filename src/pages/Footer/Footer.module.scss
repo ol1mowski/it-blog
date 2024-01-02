@@ -86,6 +86,9 @@
             font-size: 1.2rem;
             transition: scale, color 0.7s;
             will-change: color, scale;
+            &__a {
+              color: $white-color;
+            }
           }
           &__item:hover {
             scale: 1.1;
