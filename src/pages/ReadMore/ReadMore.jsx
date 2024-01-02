@@ -9,7 +9,7 @@ const ReadMore = () => {
   const fetchData = useLoaderData();
 
   const { image, title, description, category, date } = fetchData.filter(
-    (item) => item.category === id
+    (item) => item.id === id
   )[0];
 
   return (
@@ -22,7 +22,7 @@ const ReadMore = () => {
           src="https://img.icons8.com/material-rounded/20/000000/double-right.png"
           alt="double-right"
         />
-        {id}
+        {title}
       </div>
 
       <div className={s.container__image}>

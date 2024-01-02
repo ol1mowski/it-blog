@@ -3,9 +3,7 @@ import Loading from '../../../Components/UI/Loading/Loading';
 import { Link } from "react-router-dom";
 
 
-const Post = ({title, category, description, image, isLoading}) => {
-
-
+const Post = ({title, category, description, image, isLoading, id}) => {
 
   return (
     <div className={s.postsContainer__postsWrapper__post}>
@@ -13,7 +11,7 @@ const Post = ({title, category, description, image, isLoading}) => {
         <p className={s.postsContainer__postsWrapper__post__category}>{category}</p>
         <h3 className={s.postsContainer__postsWrapper__post__title}>{title}</h3>
         <p className={s.postsContainer__postsWrapper__post__text}>{description}</p>
-        <Link to={`/${category}`}><p className={s.postsContainer__postsWrapper__post__read}>
+        <Link to={`/${id}`}><p className={s.postsContainer__postsWrapper__post__read}>
         Read more
         </p></Link></> }
        
