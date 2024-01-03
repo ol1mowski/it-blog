@@ -1,14 +1,14 @@
-import CategoryContext from "../../../Context/categoryContext";
+import CategoryContext from "../../../../Context/categoryContext";
 import Post from "../Post/Post";
 import s from "../PostsStyle/PostSection.module.scss";
 import { useQuery } from "@tanstack/react-query";
 import { useContext, useEffect, useState } from "react";
-import { fetchPosts } from "../../../util/http";
-import SearchCategoryContext from "../../../Context/SearchCategoryContext";
+import { fetchPosts } from "../../../../util/http";
+import SearchCategoryContext from "../../../../Context/SearchCategoryContext";
 import Newsletter from "../Newsletter/Newsletter";
-import Loading from "../../../Components/UI/Loading/Loading";
-import Error from "../../../Components/UI/Error/Error";
-import CategoryNoFound from "../../../Components/UI/CategoryNoFound/CategoryNoFound";
+import Loading from "../../../../Components/UI/Loading/Loading";
+import Error from "../../../../Components/UI/Error/Error";
+import CategoryNoFound from "../../../../Components/UI/CategoryNoFound/CategoryNoFound";
 
 const PostSection = () => {
   const [postData, setPostData] = useState([]);

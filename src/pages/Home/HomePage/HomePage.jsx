@@ -1,5 +1,5 @@
 import CategorySection from "../CategorySection/CategorySection";
-import PostSection from "../../PostsSection/Posts/PostSection";
+import PostSection from "../PostsSection/Posts/PostSection";
 import Slider from "../Slider/Slider";
 import Footer from '../Footer/Footer';
 

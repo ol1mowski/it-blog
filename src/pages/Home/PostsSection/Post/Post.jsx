@@ -1,5 +1,5 @@
 import s from "../PostsStyle/PostSection.module.scss";
-import Loading from '../../../Components/UI/Loading/Loading';
+import Loading from '../../../../Components/UI/Loading/Loading';
 import { Link } from "react-router-dom";
 
 
