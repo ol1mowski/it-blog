@@ -3,7 +3,7 @@ import { queryClient } from "./util/http";
 import CategoryContext from "./Context/CategoryContext";
 import { useState } from "react";
 import SearchCategoryContext from "./Context/SearchCategoryContext";
-import HomePage from "./pages/HomePage/HomePage";
+import HomePage from "./pages/Home/HomePage/HomePage";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Header from "./pages/Home/Header/Header";
 import ReadMore, { readMoreLoader } from "./pages/ReadMore/ReadMore";
