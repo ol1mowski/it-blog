@@ -4,37 +4,35 @@ import { useEffect } from "react";
 import s from "../Header.module.scss";
 import SearchCategoryContext from "../../../../Context/SearchCategoryContext";
 import search from "../../../../assets/search.svg";
+import { NavLink } from 'react-router-dom';
 
 const HamburgerMenu = ({ showHamburgerMenu }) => {
-
   const { setSearchCategory } = useContext(SearchCategoryContext);
 
   const searchCategoryInput = useRef(null);
 
   const hamburgerMenu = useRef(null);
-  
+
   useEffect(() => {
-  
     const showMenuHandler = () => {
       if (hamburgerMenu.current) {
         hamburgerMenu.current.style.display = "block";
       }
     };
-  
+
     const currentRef = showHamburgerMenu.current;
-  
+
     if (currentRef) {
       currentRef.addEventListener("click", showMenuHandler);
     }
-  
+
     return () => {
       if (currentRef) {
         currentRef.removeEventListener("click", showMenuHandler);
       }
     };
   }, [showHamburgerMenu]);
-  
-  
+
   const hideMenuHandler = () => {
     hamburgerMenu.current.style.display = "none";
   };
@@ -80,9 +78,17 @@ const HamburgerMenu = ({ showHamburgerMenu }) => {
           alt="java-coffee-cup-logo"
         />
         <ul className={s.header__hamburgerMenu__nav__items}>
-          <li className={s.header__hamburgerMenu__nav__items__item}>
-            Recommended courses
-          </li>
+          <NavLink
+            to={"/recommended"}
+            className={({ isActive }) =>
+              isActive ? `${s.header__hamburgerMenu__nav__items__link_active}` : ""
+            }
+            onClick={hideMenuHandler}
+          >
+            <li className={s.header__hamburgerMenu__nav__items__item}>
+              Recommended courses
+            </li>
+          </NavLink>
           <li className={s.header__hamburgerMenu__nav__items__item}>
             Books for programmer
           </li>
