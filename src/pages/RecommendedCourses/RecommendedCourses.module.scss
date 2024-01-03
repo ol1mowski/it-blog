@@ -1,1 +1,41 @@
-@import '../../config/sass/index.scss';
+@import "../../config/sass/index.scss";
+
+.recommendedContainer {
+  margin-top: 3rem;
+  width: 100vw;
+  padding: 0 1rem;
+  &__header {
+    width: 90%;
+    margin: 0 auto;
+    &__image {
+      width: 100%;
+      border-radius: $medium-border-radius;
+      filter: grayscale(40%);
+      &__title {
+        @include header;
+        font-size: 2.5rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+  &__main {
+    @include d-flex-column;
+    gap: 2rem;
+    margin: 2rem auto;
+    &__header {
+        @include d-flex;
+        gap: 1rem;
+      &__caption {
+        @include below-headers;
+        text-align: left;
+      }
+    }
+    &__article {
+        @include d-flex;
+        gap: 1rem;
+        &__content {
+            @include p;
+        }
+    }
+  }
+}
