@@ -7,6 +7,7 @@ import HomePage from "./pages/Home/HomePage/HomePage";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Header from "./pages/Home/Header/Header";
 import ReadMore, { readMoreLoader } from "./pages/ReadMore/ReadMore";
+import RecommendedCourses from "./pages/RecommendedCourses/RecommendedCourses";
 
 function App() {
   const [currentCategory, setCurrentCategory] = useState(1);
@@ -19,6 +20,7 @@ function App() {
       children: [
         { path: "/", element: <HomePage /> },
         { path: "/:id", element: <ReadMore />, loader: readMoreLoader },
+        { path: "/recommended", element: <RecommendedCourses /> },
       ],
     },
   ]);

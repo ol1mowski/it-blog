@@ -1,7 +1,7 @@
 import s from "./Header.module.scss";
 import { useRef } from "react";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import SearchSetion from "./SearchSection/SearchSetion";
 
 const Header = () => {
@@ -26,9 +26,18 @@ const Header = () => {
         <section className={s.header__navMenu}>
           <div className={s.header__navMenu__nav}>
             <ul className={s.header__navMenu__items}>
-              <li className={s.header__navMenu__items__item}>
-                Recommended courses
-              </li>
+              <NavLink
+                to={"/recommended"}
+                className={({ isActive }) =>
+                  isActive
+                    ? `${s.header__navMenu__items__link_active}`
+                    : ''
+                }
+              >
+                <li className={s.header__navMenu__items__item}>
+                  Recommended courses
+                </li>
+              </NavLink>
               <li className={s.header__navMenu__items__item}>
                 Books for programmer
               </li>
