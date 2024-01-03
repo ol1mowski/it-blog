@@ -1,6 +1,6 @@
-import Error from "../../Components/UI/Error/Error";
-import Loading from "../../Components/UI/Loading/Loading";
-import { fetchCategory } from "../../util/http";
+import Error from "../../../Components/UI/Error/Error";
+import Loading from "../../../Components/UI/Loading/Loading";
+import { fetchCategory } from "../../../util/http";
 import Category from "./Category/Category";
 import s from "./CategorySection.module.scss";
 import { useQuery } from "@tanstack/react-query";
