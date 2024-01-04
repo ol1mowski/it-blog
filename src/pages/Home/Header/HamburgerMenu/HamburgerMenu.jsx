@@ -4,9 +4,27 @@ import { useEffect } from "react";
 import s from "../Header.module.scss";
 import SearchCategoryContext from "../../../../Context/SearchCategoryContext";
 import search from "../../../../assets/search.svg";
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 const HamburgerMenu = ({ showHamburgerMenu }) => {
+  const SUBPAGES = [
+    {
+      id: 1,
+      name: "Recommended courses",
+      url: "recommended",
+    },
+    {
+      id: 2,
+      name: "Books for programmer",
+      url: "books",
+    },
+    {
+      id: 3,
+      name: " About Author",
+      url: "about",
+    },
+  ];
+
   const { setSearchCategory } = useContext(SearchCategoryContext);
 
   const searchCategoryInput = useRef(null);
@@ -78,23 +96,22 @@ const HamburgerMenu = ({ showHamburgerMenu }) => {
           alt="java-coffee-cup-logo"
         />
         <ul className={s.header__hamburgerMenu__nav__items}>
-          <NavLink
-            to={"/recommended"}
-            className={({ isActive }) =>
-              isActive ? `${s.header__hamburgerMenu__nav__items__link_active}` : ""
-            }
-            onClick={hideMenuHandler}
-          >
-            <li className={s.header__hamburgerMenu__nav__items__item}>
-              Recommended courses
-            </li>
-          </NavLink>
-          <li className={s.header__hamburgerMenu__nav__items__item}>
-            Books for programmer
-          </li>
-          <li className={s.header__hamburgerMenu__nav__items__item}>
-            About Author
-          </li>
+          {SUBPAGES.map((item) => (
+            <NavLink
+              key={item.id}
+              to={item.url}
+              className={({ isActive }) =>
+                isActive
+                  ? `${s.header__hamburgerMenu__nav__items__link_active}`
+                  : ""
+              }
+              onClick={hideMenuHandler}
+            >
+              <li className={s.header__hamburgerMenu__nav__items__item}>
+                {item.name}
+              </li>
+            </NavLink>
+          ))}
         </ul>
         <div className={s.header__hamburgerMenu__nav__search}>
           <input

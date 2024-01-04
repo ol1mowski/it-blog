@@ -3,8 +3,28 @@ import { useRef } from "react";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import SearchSetion from "./SearchSection/SearchSetion";
+import Footer from '../Footer/Footer';
 
 const Header = () => {
+
+  const SUBPAGES = [
+    {
+      id: 1,
+      name: "Recommended courses",
+      url: "recommended",
+    },
+    {
+      id: 2,
+      name: "Books for programmer",
+      url: "books",
+    },
+    {
+      id: 3,
+      name: " About Author",
+      url: "about",
+    },
+  ];
+
   const navigationSection = useRef(null);
 
   const showHamburgerMenu = useRef(null);
@@ -26,22 +46,21 @@ const Header = () => {
         <section className={s.header__navMenu}>
           <div className={s.header__navMenu__nav}>
             <ul className={s.header__navMenu__items}>
-              <NavLink
-                to={"/recommended"}
-                className={({ isActive }) =>
-                  isActive
-                    ? `${s.header__navMenu__items__link_active}`
-                    : ''
-                }
-              >
-                <li className={s.header__navMenu__items__item}>
-                  Recommended courses
-                </li>
-              </NavLink>
-              <li className={s.header__navMenu__items__item}>
-                Books for programmer
-              </li>
-              <li className={s.header__navMenu__items__item}>About Author</li>
+              {SUBPAGES.map((item) => (
+                <NavLink
+                  key={item.id}
+                  to={item.url}
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${s.header__navMenu__items__link_active}`
+                      : ""
+                  }
+                >
+                  <li className={s.header__navMenu__items__item}>
+                    {item.name}
+                  </li>
+                </NavLink>
+              ))}
             </ul>
           </div>
         </section>
@@ -61,6 +80,7 @@ const Header = () => {
         <SearchSetion />
       </header>
       <Outlet />
+      <Footer />
     </>
   );
 };
