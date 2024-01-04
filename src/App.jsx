@@ -1,5 +1,5 @@
 import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "./util/http";
+import { fetchSubpage, queryClient } from "./util/http";
 import CategoryContext from "./Context/CategoryContext";
 import { useState } from "react";
 import SearchCategoryContext from "./Context/SearchCategoryContext";
@@ -20,7 +20,7 @@ function App() {
       children: [
         { path: "/", element: <HomePage /> },
         { path: "/:id", element: <ReadMore />, loader: readMoreLoader },
-        { path: "/recommended", element: <SubpageHeader /> },
+        { path: "/recommended", element: <SubpageHeader />, loader: fetchSubpage},
       ],
     },
   ]);

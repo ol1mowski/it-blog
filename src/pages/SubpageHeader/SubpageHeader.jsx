@@ -1,6 +1,6 @@
 import s from "./SubpageHeader.module.scss";
 
-import image from "../../assets/main.jpeg";
+import image from "../../assets/mainSubpageHeader.webp";
 
 const SubpageHeader = () => {
   return (
@@ -8,7 +8,7 @@ const SubpageHeader = () => {
       <header className={s.subpageContainer__header}>
         <img
           src={image}
-          alt=""
+          alt="main image of subpage"
           className={s.subpageContainer__header__image}
         />
         <h3 className={s.subpageContainer__header__image__title}>
@@ -53,3 +53,9 @@ const SubpageHeader = () => {
 };
 
 export default SubpageHeader;
+
+export const subpageLoader = async () => {
+  const data = await fetchPosts();
+
+  return data;
+};

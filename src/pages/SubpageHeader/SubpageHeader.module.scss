@@ -18,6 +18,9 @@
       @media screen and (min-width: $big-tablets) {
         width: 70%;
       }
+      @media screen and (min-width: $desktop) {
+        width: 50%;
+      }
       &__title {
         @include header;
         font-size: 2.5rem;
