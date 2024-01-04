@@ -20,7 +20,7 @@ function App() {
       children: [
         { path: "/", element: <HomePage /> },
         { path: "/:id", element: <ReadMore />, loader: readMoreLoader },
-        { path: "/recommended", element: <SubpageHeader />, loader: fetchSubpage},
+        { path: "/recommended", element: <SubpageHeader id={'recommended'}/>, loader: fetchSubpage},
       ],
     },
   ]);
