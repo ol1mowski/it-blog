@@ -1,5 +1,6 @@
-import React, { useContext } from "react";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+
+import { useNavigate } from "react-router-dom";
 
 import search from "../../../../assets/search.svg";
 
@@ -7,6 +8,8 @@ import s from "../Header.module.scss";
 import SearchCategoryContext from "../../../../Context/SearchCategoryContext";
 
 const SearchSetion = () => {
+  const navigate = useNavigate();
+
   const { setSearchCategory } = useContext(SearchCategoryContext);
 
   const searchSection = useRef(null);
@@ -25,23 +28,25 @@ const SearchSetion = () => {
     e.stopPropagation();
   };
 
+  const searchBehavior = (e) => {
+    e.target.value = "";
+    searchSection.current.style.display = "none";
+    navigate("/");
+    const postsElement = document.getElementById("posts");
+    postsElement.scrollIntoView({ behavior: "smooth" });
+  };
+
   const categoryKeyHandler = (e) => {
     if (e.key === "Enter") {
       setSearchCategory(e.target.value);
-      e.target.value = "";
-      searchSection.current.style.display = "none";
-      const postsElement = document.getElementById("posts");
-      postsElement.scrollIntoView({ behavior: "smooth" });
+      searchBehavior(e);
     }
   };
 
   const categoryClickHandler = (e) => {
     const searchValue = searchCategoryInput.current.value;
     setSearchCategory(searchValue);
-    e.target.value = "";
-    searchSection.current.style.display = "none";
-    const postsElement = document.getElementById("posts");
-    postsElement.scrollIntoView({ behavior: "smooth" });
+    searchBehavior(e);
   };
 
   return (
