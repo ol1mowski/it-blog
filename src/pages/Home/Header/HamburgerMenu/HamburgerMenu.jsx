@@ -21,7 +21,7 @@ const HamburgerMenu = ({ showHamburgerMenu }) => {
     {
       id: 3,
       name: " About Author",
-      url: "about",
+      url: "author",
     },
   ];
 

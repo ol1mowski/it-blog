@@ -5,7 +5,7 @@ import { useLoaderData } from "react-router-dom";
 const SubpageHeader = ({ id }) => {
   const data = useLoaderData();
 
-  const { image, title, description, subtitle, icons } = data.find(
+  const { image, title, description, subtitle, icon } = data.find(
     (data) => data.id === id
   );
 
@@ -15,8 +15,7 @@ const SubpageHeader = ({ id }) => {
       title={title}
       subtitle={subtitle}
       description={description}
-      iconOne={icons[0]}
-      iconTwo={icons[1]}
+      icon={icon}
     />
   );
 };

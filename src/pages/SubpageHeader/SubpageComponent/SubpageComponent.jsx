@@ -1,6 +1,12 @@
 import s from "../SubpageHeader.module.scss";
 
-export const SubpageComponent = ({ image, title, subtitle, description, iconOne, iconTwo }) => {
+export const SubpageComponent = ({
+  image,
+  title,
+  subtitle,
+  description,
+  icon,
+}) => {
   return (
     <section className={s.subpageContainer}>
       <header className={s.subpageContainer__header}>
@@ -13,14 +19,9 @@ export const SubpageComponent = ({ image, title, subtitle, description, iconOne,
       </header>
       <main className={s.subpageContainer__main}>
         <div className={s.subpageContainer__main__header}>
-          <img
-            width="75"
-            height="75"
-            src={iconOne}
-            alt="title icon"
-          />
+          <img width="75" height="75" src={icon} alt="title icon" />
           <h4 className={s.subpageContainer__main__header__caption}>
-            { subtitle }
+            {subtitle}
           </h4>
         </div>
 
@@ -28,7 +29,7 @@ export const SubpageComponent = ({ image, title, subtitle, description, iconOne,
           <img
             width="75"
             height="75"
-            src={iconTwo}
+            src="https://img.icons8.com/arcade/75/star.png"
             alt="description icon"
           />
           <p className={s.subpageContainer__main__article__content}>
