@@ -5,25 +5,17 @@ import s from "../Header.module.scss";
 import SearchCategoryContext from "../../../../Context/SearchCategoryContext";
 import search from "../../../../assets/search.svg";
 import { NavLink } from "react-router-dom";
+import { useQuery } from '@tanstack/react-query';
+import { fetchSubpage } from '../../../../util/http';
 
 const HamburgerMenu = ({ showHamburgerMenu }) => {
-  const SUBPAGES = [
-    {
-      id: 1,
-      name: "Recommended courses",
-      url: "recommended",
-    },
-    {
-      id: 2,
-      name: "Books for programmer",
-      url: "books",
-    },
-    {
-      id: 3,
-      name: " About Author",
-      url: "author",
-    },
-  ];
+
+  const { data, error, isError, isLoading } = useQuery({
+    queryKey: ['subpage'],
+    queryFn: fetchSubpage,
+  })
+
+  const SUBPAGES = data || [];
 
   const { setSearchCategory } = useContext(SearchCategoryContext);
 

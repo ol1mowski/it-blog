@@ -4,26 +4,17 @@ import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import SearchSetion from "./SearchSection/SearchSetion";
 import Footer from '../Footer/Footer';
+import { useQuery } from '@tanstack/react-query';
+import { fetchSubpage } from '../../../util/http';
 
 const Header = () => {
 
-  const SUBPAGES = [
-    {
-      id: 1,
-      name: "Recommended courses",
-      url: "recommended",
-    },
-    {
-      id: 2,
-      name: "Books for programmer",
-      url: "books",
-    },
-    {
-      id: 3,
-      name: " About Author",
-      url: "author",
-    },
-  ];
+  const { data } = useQuery({
+    queryKey: ['subpage'],
+    queryFn: fetchSubpage,
+  })
+
+  const SUBPAGES = data || [];
 
   const navigationSection = useRef(null);
 
@@ -49,7 +40,7 @@ const Header = () => {
               {SUBPAGES.map((item) => (
                 <NavLink
                   key={item.id}
-                  to={item.url}
+                  to={item.id}
                   className={({ isActive }) =>
                     isActive
                       ? `${s.header__navMenu__items__link_active}`
