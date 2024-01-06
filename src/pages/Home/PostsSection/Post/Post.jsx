@@ -11,9 +11,9 @@ const Post = ({title, category, description, image, isLoading, id}) => {
         <p className={s.postsContainer__postsWrapper__post__category}>{category}</p>
         <h3 className={s.postsContainer__postsWrapper__post__title}>{title}</h3>
         <p className={s.postsContainer__postsWrapper__post__text}>{description}</p>
-        <Link to={`/${id}`}><p className={s.postsContainer__postsWrapper__post__read}>
+        <a href={`/${id}`}><p className={s.postsContainer__postsWrapper__post__read}>
         Read more
-        </p></Link></> }
+        </p></a></> }
        
   </div>
   )
