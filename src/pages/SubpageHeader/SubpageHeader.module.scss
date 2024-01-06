@@ -1,0 +1,61 @@
+@import "../../config/sass/index.scss";
+
+.subpageContainer {
+  margin-top: 3rem;
+  width: 100vw;
+  padding: 0 1rem;
+  @media screen and (min-width: 650px) {
+    padding: 0 3rem;
+  }
+  &__header {
+    width: 90%;
+    margin: 0 auto;
+    @include d-flex-column;
+    &__image {
+      width: 100%;
+      border-radius: $medium-border-radius;
+      filter: grayscale(40%);
+      @media screen and (min-width: $big-tablets) {
+        width: 70%;
+      }
+      @media screen and (min-width: $desktop) {
+        width: 50%;
+      }
+      &__title {
+        @include header;
+        font-size: 2.5rem;
+        margin-top: 2rem;
+      }
+    }
+  }
+  &__main {
+    @include d-flex-column;
+    gap: 2rem;
+    margin: 3rem auto;
+    @media screen and (min-width: $tablet){
+      width: 40rem;
+      gap: 4rem;
+    }
+    &__header {
+      @include d-flex;
+      gap: 2rem;
+      &__caption {
+        @include below-headers;
+        text-align: left;
+        @media screen and (min-width: 650px) {
+          font-size: 2rem;
+        }
+      }
+    }
+    &__article {
+      @include d-flex;
+      gap: 1rem;
+      &__content {
+        @include p;
+        @media screen and (min-width: $tablet) {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}

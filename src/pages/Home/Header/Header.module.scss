@@ -70,6 +70,9 @@
         list-style-type: none;
         align-items: flex-start;
         gap: 0.5rem;
+        &__link_active {
+          font-weight: bold;
+        }
         &__item {
           @include items-will-hover;
           font-size: 1.5rem;
@@ -107,6 +110,9 @@
       color: $items-color;
       @include d-flex;
       list-style-type: none;
+      &__link_active {
+        font-weight: bold;
+      }
       &__item {
         @include items-will-hover;
         margin-right: 2rem;

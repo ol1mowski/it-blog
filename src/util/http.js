@@ -49,3 +49,8 @@ export function fetchCategory() {
   const collectionName = "categories";
   return fetchData(collectionName);
 }
+
+export function fetchSubpage() {
+  const collectionName = "subpages";
+  return fetchData(collectionName);
+}

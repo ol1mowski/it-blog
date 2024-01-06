@@ -1,10 +1,21 @@
 import s from "./Header.module.scss";
 import { useRef } from "react";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import SearchSetion from "./SearchSection/SearchSetion";
+import Footer from '../Footer/Footer';
+import { useQuery } from '@tanstack/react-query';
+import { fetchSubpage } from '../../../util/http';
 
 const Header = () => {
+
+  const { data } = useQuery({
+    queryKey: ['subpage'],
+    queryFn: fetchSubpage,
+  })
+
+  const SUBPAGES = data || [];
+
   const navigationSection = useRef(null);
 
   const showHamburgerMenu = useRef(null);
@@ -26,13 +37,21 @@ const Header = () => {
         <section className={s.header__navMenu}>
           <div className={s.header__navMenu__nav}>
             <ul className={s.header__navMenu__items}>
-              <li className={s.header__navMenu__items__item}>
-                Recommended courses
-              </li>
-              <li className={s.header__navMenu__items__item}>
-                Books for programmer
-              </li>
-              <li className={s.header__navMenu__items__item}>About Author</li>
+              {SUBPAGES.map((item) => (
+                <NavLink
+                  key={item.id}
+                  to={item.id}
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${s.header__navMenu__items__link_active}`
+                      : ""
+                  }
+                >
+                  <li className={s.header__navMenu__items__item}>
+                    {item.name}
+                  </li>
+                </NavLink>
+              ))}
             </ul>
           </div>
         </section>
@@ -52,6 +71,7 @@ const Header = () => {
         <SearchSetion />
       </header>
       <Outlet />
+      <Footer />
     </>
   );
 };
