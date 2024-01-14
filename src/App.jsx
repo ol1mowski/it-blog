@@ -18,7 +18,7 @@ function App() {
       path: "/",
       element: <Header />,
       children: [
-        { path: "/", element: <HomePage /> },
+        { index: true, element: <HomePage /> },
         { path: "/:id", element: <ReadMore />, loader: readMoreLoader },
         { path: "/recommended", element: <SubpageHeader id={'recommended'}/>, loader: fetchSubpage},
         { path: "/books", element: <SubpageHeader id={'books'}/>, loader: fetchSubpage},

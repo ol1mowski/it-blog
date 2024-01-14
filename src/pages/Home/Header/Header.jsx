@@ -1,18 +1,17 @@
 import s from "./Header.module.scss";
 import { useRef } from "react";
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, ScrollRestoration } from "react-router-dom";
 import SearchSetion from "./SearchSection/SearchSetion";
-import Footer from '../Footer/Footer';
-import { useQuery } from '@tanstack/react-query';
-import { fetchSubpage } from '../../../util/http';
+import Footer from "../Footer/Footer";
+import { useQuery } from "@tanstack/react-query";
+import { fetchSubpage } from "../../../util/http";
 
 const Header = () => {
-
   const { data } = useQuery({
-    queryKey: ['subpage'],
+    queryKey: ["subpage"],
     queryFn: fetchSubpage,
-  })
+  });
 
   const SUBPAGES = data || [];
 
@@ -22,6 +21,7 @@ const Header = () => {
 
   return (
     <>
+      <ScrollRestoration />
       <header ref={navigationSection} className={s.header}>
         <section className={s.header__titleSection}>
           <Link to={"/"}>
@@ -42,9 +42,7 @@ const Header = () => {
                   key={item.id}
                   to={item.id}
                   className={({ isActive }) =>
-                    isActive
-                      ? `${s.header__navMenu__items__link_active}`
-                      : ""
+                    isActive ? `${s.header__navMenu__items__link_active}` : ""
                   }
                 >
                   <li className={s.header__navMenu__items__item}>
