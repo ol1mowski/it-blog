@@ -1,6 +1,6 @@
 import { useContext, useRef, useEffect } from "react";
-
 import { useQuery } from '@tanstack/react-query';
+
 import { fetchSubpage } from '../../../../util/http';
 
 import SearchCategoryContext from "../../../../Context/SearchCategoryContext";
