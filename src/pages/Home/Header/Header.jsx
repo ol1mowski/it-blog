@@ -1,10 +1,13 @@
 import s from "./Header.module.scss";
+
 import { useRef } from "react";
-import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 import { Link, NavLink, Outlet, ScrollRestoration } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+
+import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 import SearchSetion from "./SearchSection/SearchSetion";
 import Footer from "../Footer/Footer";
-import { useQuery } from "@tanstack/react-query";
+
 import { fetchSubpage } from "../../../util/http";
 
 const Header = () => {

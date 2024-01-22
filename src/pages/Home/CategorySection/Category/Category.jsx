@@ -1,5 +1,7 @@
 import s from "../CategorySection.module.scss";
+
 import { useContext, useRef } from "react";
+
 import CategoryContext from "../../../../Context/categoryContext";
 
 const Category = ({ name, image, id }) => {

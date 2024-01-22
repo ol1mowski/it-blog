@@ -1,6 +1,6 @@
 import { useContext, useRef } from "react";
-
 import { useNavigate } from "react-router-dom";
+
 
 import SearchCategoryContext from "../../../../Context/SearchCategoryContext";
 import SearchComponent from "./SearchComponent/SearchComponent";
