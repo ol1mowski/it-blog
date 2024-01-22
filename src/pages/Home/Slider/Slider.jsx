@@ -1,9 +1,11 @@
 import s from "./Slider.module.scss";
 
-import { fetchPosts } from "../../../util/http";
 import { useQuery } from "@tanstack/react-query";
-import SliderComponent from "./SliderComponent/SliderComponent";
 import { memo } from "react";
+
+import { fetchPosts } from "../../../util/http";
+
+import SliderComponent from "./SliderComponent/SliderComponent";
 import Loading from "../../../Components/UI/Loading/Loading";
 import Error from "../../../Components/UI/Error/Error";
 
