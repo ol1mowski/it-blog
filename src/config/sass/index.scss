@@ -1,5 +1,5 @@
 //import font
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,200&family=Kanit:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,200&family=Kanit:wght@300&display=swap");
 
 //text colors
 
@@ -10,10 +10,10 @@ $red-color: #ff0000;
 $green-color: #159a15;
 $white-color: #fff;
 
-$error-red-background: #F8D7D9;
+$error-red-background: #f8d7d9;
 $error-red-fontColor: #650a0a;
 
-$category-no-found-color: #FFF3CD;
+$category-no-found-color: #fff3cd;
 
 //background colors
 $white-background-color: #f9f9f9;
@@ -42,7 +42,7 @@ $box-shadow-category: 1px 1px 1px 1px $blue-color;
   color: $dark-color;
   font-size: 1.5rem;
   font-weight: bold;
-  font-family: 'Kanit', sans-serif;
+  font-family: "Kanit", sans-serif;
 }
 
 @mixin below-headers() {
@@ -74,7 +74,7 @@ $box-shadow-category: 1px 1px 1px 1px $blue-color;
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.6;
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: "Barlow Condensed", sans-serif;
 }
 
 @mixin btn() {
@@ -112,4 +112,4 @@ $article-margin: 2rem;
 //border-radious
 
 $large-border-radius: 1.7rem;
-$medium-border-radius: .7rem;
+$medium-border-radius: 0.7rem;

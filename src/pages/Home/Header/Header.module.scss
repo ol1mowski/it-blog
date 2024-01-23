@@ -110,6 +110,8 @@
       color: $items-color;
       @include d-flex;
       list-style-type: none;
+      @include header;
+      font-size: 1rem;
       &__link_active {
         font-weight: bold;
       }
@@ -136,8 +138,7 @@
   }
 
   &__h2 {
-    font-weight: 700;
-    color: $dark-color;
+    @include header;
   }
 
   &__searchSection {

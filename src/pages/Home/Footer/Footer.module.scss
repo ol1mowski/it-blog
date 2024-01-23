@@ -32,14 +32,9 @@
         @include d-flex;
         gap: 1rem;
         &__h3 {
+          @include header;
           color: $white-color;
-          font-size: 1.5rem;
-          @media screen and (min-width: $mobile) {
-            font-size: 1.7rem;
-          }
-          @media screen and (min-width: $desktop) {
-            font-size: 2.2rem;
-          }
+          font-size: 2.5rem;
         }
       }
       &__img {
@@ -67,14 +62,10 @@
         margin-left: 2rem;
 
         &__h3 {
+          @include header;
+          color: $white-color;
+          font-size: 2.5rem;
           margin-bottom: 1rem;
-          font-size: 1.7rem;
-          @media screen and (min-width: $mobile) {
-            font-size: 1.9rem;
-          }
-          @media screen and (min-width: $desktop) {
-            font-size: 2.2rem;
-          }
         }
         &__items {
           @include d-flex-column;
