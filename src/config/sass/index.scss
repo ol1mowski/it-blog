@@ -1,3 +1,6 @@
+//import font
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,200&family=Kanit:wght@300&display=swap');
+
 //text colors
 
 $dark-color: #2d2e32;
@@ -37,8 +40,9 @@ $box-shadow-category: 1px 1px 1px 1px $blue-color;
 
 @mixin header() {
   color: $dark-color;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  font-family: 'Kanit', sans-serif;
 }
 
 @mixin below-headers() {
@@ -67,9 +71,10 @@ $box-shadow-category: 1px 1px 1px 1px $blue-color;
 @mixin p() {
   font-family: Mulish, sans-serif;
   color: #555;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.6;
+  font-family: 'Barlow Condensed', sans-serif;
 }
 
 @mixin btn() {
