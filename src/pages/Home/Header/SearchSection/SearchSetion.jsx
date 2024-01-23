@@ -29,7 +29,7 @@ const SearchSetion = () => {
   const searchBehavior = (e) => {
     e.target.value = "";
     searchSection.current.style.display = "none";
-    navigate("/");
+    navigate("#home");
     const postsElement = document.getElementById("posts");
     postsElement.scrollIntoView({ behavior: "smooth" });
   };
