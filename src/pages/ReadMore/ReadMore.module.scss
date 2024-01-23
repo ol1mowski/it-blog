@@ -72,13 +72,11 @@
         width: 70%;
       }
       &__title {
-        width: 100%;
-        font-size: 2rem;
+        @include header;
+        font-size: 3rem;
       }
       &__description {
-        font-size: 1.3rem;
-        font-weight: 200;
-        border-radius: 0.7rem;
+        @include p;
       }
     }
     &__authorContainer {
