@@ -1,6 +1,7 @@
 import s from "./Slider.module.scss";
 
 import { useQuery } from "@tanstack/react-query";
+
 import { memo } from "react";
 
 import { fetchPosts } from "../../../util/http";

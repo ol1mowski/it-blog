@@ -1,7 +1,9 @@
 import s from "./Footer.module.scss";
 
 import { useSpring, animated, config } from "react-spring";
+
 import { Link } from "react-scroll";
+
 import { useEffect } from "react";
 
 const Footer = () => {
