@@ -1,11 +1,17 @@
-import CategoryContext from "../../../../Context/categoryContext";
-import Post from "../Post/Post";
 import s from "../PostsStyle/PostSection.module.scss";
-import { useQuery } from "@tanstack/react-query";
+
+import CategoryContext from "../../../../Context/categoryContext";
+
 import { useContext, useEffect, useState } from "react";
-import { fetchPosts } from "../../../../util/http";
+import { useQuery } from "@tanstack/react-query";
+
+import { fetchElements } from "../../../../util/http";
+
 import SearchCategoryContext from "../../../../Context/SearchCategoryContext";
+
+import Post from "../Post/Post";
 import Newsletter from "../Newsletter/Newsletter";
+
 import Loading from "../../../../Components/UI/Loading/Loading";
 import Error from "../../../../Components/UI/Error/Error";
 import CategoryNoFound from "../../../../Components/UI/CategoryNoFound/CategoryNoFound";
@@ -21,7 +27,7 @@ const PostSection = () => {
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["posts"],
-    queryFnL: fetchPosts,
+    queryFn: () => fetchElements('posts'),
   });
 
   useEffect(() => {

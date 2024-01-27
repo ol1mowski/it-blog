@@ -1,7 +1,9 @@
 import s from "./Newsletter.module.scss";
 
 import img from "../../../../assets/technology.jpg";
+
 import { useRef, useState } from "react";
+
 import Validation from "../../../../Components/UI/Validation/Validation";
 
 const Newsletter = () => {

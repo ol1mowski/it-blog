@@ -46,6 +46,11 @@ export function fetchElements(element) {
   return fetchData(collectionName);
 }
 
+export function fetchPosts() {
+  const collectionName = "posts";
+  return fetchData(collectionName);
+}
+
 export function fetchCategory() {
   const collectionName = "categories";
   return fetchData(collectionName);
