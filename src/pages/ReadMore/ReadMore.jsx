@@ -1,6 +1,6 @@
 import { useParams, useLoaderData } from "react-router-dom";
 
-import { fetchPosts } from "../../util/http";
+import { fetchElements } from "../../util/http";
 import { ReadMorePost } from "./ReadMorePost/ReadMorePost";
 
 const ReadMore = () => {
@@ -20,7 +20,7 @@ const ReadMore = () => {
 export default ReadMore;
 
 export const readMoreLoader = async () => {
-  const data = await fetchPosts();
+  const data = await fetchElements('posts');
 
   return data;
 };
