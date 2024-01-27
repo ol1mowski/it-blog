@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 
 import { memo } from "react";
 
-import { fetchPosts } from "../../../util/http";
+import { fetchElements } from "../../../util/http";
 
 import SliderComponent from "./SliderComponent/SliderComponent";
 import Loading from "../../../Components/UI/Loading/Loading";
@@ -13,7 +13,7 @@ import Error from "../../../Components/UI/Error/Error";
 const Slider = memo(() => {
   const { data, status, isError, error } = useQuery({
     queryKey: ["posts"],
-    queryFn: fetchPosts,
+    queryFn: () => fetchElements('posts'),
   });
 
   if (isError) {

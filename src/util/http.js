@@ -41,8 +41,8 @@ async function fetchData(collectionName) {
   }
 }
 
-export function fetchPosts() {
-  const collectionName = "posts";
+export function fetchElements(element) {
+  const collectionName = element;
   return fetchData(collectionName);
 }
 
