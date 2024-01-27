@@ -8,12 +8,12 @@ import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 import SearchSetion from "./SearchSection/SearchSetion";
 import Footer from "../Footer/Footer";
 
-import { fetchSubpage } from "../../../util/http";
+import { fetchElements } from "../../../util/http";
 
 const Header = () => {
   const { data } = useQuery({
     queryKey: ["subpage"],
-    queryFn: fetchSubpage,
+    queryFn: () => fetchElements('subpages'),
   });
 
   const SUBPAGES = data || [];

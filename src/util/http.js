@@ -45,9 +45,3 @@ export function fetchElements(element) {
   const collectionName = element;
   return fetchData(collectionName);
 }
-
-
-export function fetchSubpage() {
-  const collectionName = "subpages";
-  return fetchData(collectionName);
-}
