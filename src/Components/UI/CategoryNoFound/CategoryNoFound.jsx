@@ -2,7 +2,7 @@ import CategoryContext from "../../../Context/categoryContext";
 import s from "./CategoryNoFound.module.scss";
 import { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchCategory } from "../../../util/http";
+import { fetchElements } from "../../../util/http";
 import CategoryNoFoundComponent from "./Category/CategoryNoFoundComponent";
 
 const CategoryNoFound = () => {
@@ -10,7 +10,7 @@ const CategoryNoFound = () => {
 
   const { data, isError, error, isLoading } = useQuery({
     queryKey: ["category"],
-    queryFn: fetchCategory,
+    queryFn: () => fetchElements('categories'),
   });
 
   const CATEGORY = data || [];

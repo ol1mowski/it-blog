@@ -2,16 +2,17 @@ import s from "./CategorySection.module.scss";
 
 import { useQuery } from "@tanstack/react-query";
 
-import { fetchCategory } from "../../../util/http";
+import { fetchElements } from "../../../util/http";
 
 import Category from "./Category/Category";
+
 import Error from "../../../Components/UI/Error/Error";
 import Loading from "../../../Components/UI/Loading/Loading";
 
 const CategorySection = () => {
   const { data, status, error } = useQuery({
     queryKey: ["categories"],
-    queryFn: fetchCategory,
+    queryFn: () => fetchElements('categories'),
   });
 
   const CATEGORY_DATA = data || [];

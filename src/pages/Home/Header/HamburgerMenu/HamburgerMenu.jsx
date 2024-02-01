@@ -1,7 +1,7 @@
 import { useContext, useRef, useEffect } from "react";
 import { useQuery } from '@tanstack/react-query';
 
-import { fetchSubpage } from '../../../../util/http';
+import { fetchElements } from '../../../../util/http';
 
 import SearchCategoryContext from "../../../../Context/SearchCategoryContext";
 
@@ -11,7 +11,7 @@ const HamburgerMenu = ({ showHamburgerMenu }) => {
 
   const { data, error, isError, isLoading } = useQuery({
     queryKey: ['subpage'],
-    queryFn: fetchSubpage,
+    queryFn: () => fetchElements('subpages'),
   })
 
   const SUBPAGES = data || [];
