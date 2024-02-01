@@ -1,6 +1,6 @@
 import s from "../PostsStyle/PostSection.module.scss";
 
-import CategoryContext from "../../../../Context/categoryContext";
+import CategoryContext from "../../../../Context/CategoryContext";
 
 import { useContext, useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
