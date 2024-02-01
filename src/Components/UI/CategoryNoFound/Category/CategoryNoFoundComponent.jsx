@@ -1,4 +1,4 @@
-import CategoryContext from '../../../../Context/categoryContext';
+import CategoryContext from '../../../../Context/CategoryContext';
 import s from './CategoryNoFoundComponent.module.scss';
 import { useContext } from 'react';
 
