@@ -2,7 +2,7 @@ import s from "./Footer.module.scss";
 
 import { useSpring, animated, config } from "react-spring";
 
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 
 import { useEffect } from "react";
 
@@ -74,28 +74,33 @@ const Footer = () => {
                   >
                     <animated.span style={style}>Home page</animated.span>
                   </Link>
-    
                 </li>
                 <li
                   className={
                     s.footerContainer__navigation__wrapper__nav__items__item
                   }
                 >
-                  Recommended courses
+                  <Link className={s.href} to={"/recommended"}>
+                    Recommended courses
+                  </Link>
                 </li>
                 <li
                   className={
                     s.footerContainer__navigation__wrapper__nav__items__item
                   }
                 >
-                  Books for programmer
+                  <Link className={s.href} to={"/books"}>
+                    Books For Programmer
+                  </Link>
                 </li>
                 <li
                   className={
                     s.footerContainer__navigation__wrapper__nav__items__item
                   }
                 >
-                  About Author
+                  <Link className={s.href} to="/author">
+                    About Author
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -104,7 +109,6 @@ const Footer = () => {
                 className={
                   s.footerContainer__navigation__wrapper__sources__source
                 }
-                id={s.yt}
               >
                 <img
                   width="50"
@@ -112,13 +116,12 @@ const Footer = () => {
                   src="https://img.icons8.com/color/50/youtube-play.png"
                   alt="youtube-play"
                 />
-                <p
-                  className={
-                    s.footerContainer__navigation__wrapper__sources__source__content
-                  }
+                <a
+                  id={s.yt}
+                  href="https://www.youtube.com/channel/UCTNFKRALTZoSQS6mDOuDs2Q"
                 >
                   YouTube
-                </p>
+                </a>
               </div>
               <div
                 id={s.contact}

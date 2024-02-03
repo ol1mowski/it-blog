@@ -125,12 +125,16 @@
   }
 }
 
-#yt:hover {
+#yt {
   scale: 1.1;
   color: $red-color;
 }
 
-#contact:hover {
+#contact {
   scale: 1.1;
   color: $blue-color;
+}
+
+.href {
+  color: $white-color;
 }
