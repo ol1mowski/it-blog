@@ -34,7 +34,9 @@
         &__h3 {
           @include header;
           color: $white-color;
-          font-size: 2.5rem;
+          @media screen and (min-width: $big-tablets) {
+            font-size: 2.5rem;
+          }
         }
       }
       &__img {
