@@ -75,6 +75,9 @@ $box-shadow-category: 1px 1px 1px 1px $blue-color;
   font-weight: 500;
   line-height: 1.6;
   font-family: "Barlow Condensed", sans-serif;
+  @media screen and (min-width: $big-tablets) {
+    font-size: 1.2rem;
+  }
 }
 
 @mixin btn() {
