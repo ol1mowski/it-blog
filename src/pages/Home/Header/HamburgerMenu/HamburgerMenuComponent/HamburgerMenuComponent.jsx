@@ -1,17 +1,15 @@
-import search from "../../../../../assets/search.svg";
+// import search from "../../../../../assets/search.svg";
 import { NavLink } from "react-router-dom";
 import s from "../../Header.module.scss";
-
 
 const HamburgerMenuComponent = ({
   hamburgerMenu,
   hideMenuHandler,
   SUBPAGES,
-  categoryClickHandler,
-  categoryKeyHandler,
-  searchCategoryInput,
+  // categoryClickHandler,
+  // categoryKeyHandler,
+  // searchCategoryInput,
 }) => {
-
   return (
     <menu ref={hamburgerMenu} className={s.header__hamburgerMenu}>
       <section
@@ -34,6 +32,19 @@ const HamburgerMenuComponent = ({
           alt="java-coffee-cup-logo"
         />
         <ul className={s.header__hamburgerMenu__nav__items}>
+          <NavLink
+            to={'/'}
+            className={({ isActive }) =>
+              isActive
+                ? `${s.header__hamburgerMenu__nav__items__link_active}`
+                : ""
+            }
+            onClick={hideMenuHandler}
+          >
+            <li className={s.header__hamburgerMenu__nav__items__item}>
+              Home
+            </li>
+          </NavLink>
           {SUBPAGES.map((item) => (
             <NavLink
               key={item.id}
@@ -51,7 +62,7 @@ const HamburgerMenuComponent = ({
             </NavLink>
           ))}
         </ul>
-        <div className={s.header__hamburgerMenu__nav__search}>
+        {/* <div className={s.header__hamburgerMenu__nav__search}>
           <input
             ref={searchCategoryInput}
             onKeyDown={categoryKeyHandler}
@@ -66,7 +77,7 @@ const HamburgerMenuComponent = ({
           >
             <img width="20" height="20" src={search} alt="search--v1" />
           </button>
-        </div>
+        </div> */}
         <img
           className={s.header__hamburgerMenu__nav__imgReact}
           width="200"

@@ -13,7 +13,7 @@ import { fetchElements } from "../../../util/http";
 const Header = () => {
   const { data } = useQuery({
     queryKey: ["subpage"],
-    queryFn: () => fetchElements('subpages'),
+    queryFn: () => fetchElements("subpages"),
   });
 
   const SUBPAGES = data || [];
@@ -40,6 +40,14 @@ const Header = () => {
         <section className={s.header__navMenu}>
           <div className={s.header__navMenu__nav}>
             <ul className={s.header__navMenu__items}>
+              <NavLink
+                to={"/"}
+                className={({ isActive }) =>
+                  isActive ? `${s.header__navMenu__items__link_active}` : ""
+                }
+              >
+                <li className={s.header__navMenu__items__item}>Home</li>
+              </NavLink>
               {SUBPAGES.map((item) => (
                 <NavLink
                   key={item.id}
